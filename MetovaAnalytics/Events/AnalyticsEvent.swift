@@ -31,6 +31,8 @@ import Foundation
 
 open class AnalyticsEvent {
     
+    public init() {}
+    
     open var name: String {
         fatalError("AnalyticsEvent is an abstract class.  Name must be provided by a subclass.")
     }
