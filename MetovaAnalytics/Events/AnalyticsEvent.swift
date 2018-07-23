@@ -27,43 +27,41 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-public struct Analytics {
-    
-    private init() {}
-    
-    private static var providers: [ProviderKey: AnalyticsProvider] = [:]
-    
-    public static func send(event: AnalyticsEvent) {
-        for provider in providers.values {
-            provider.send(event: event)
-        }
-    }
-    
-}
+import Foundation
 
-// Providers
-extension Analytics {
+public class AnalyticsEvent {
     
-    enum ProviderKey: Hashable {
-        case explicit(String)
-        case inferred(String)
+    public var name: String {
+        fatalError("AnalyticsEvent is an abstract class.  Name must be provided by a subclass.")
     }
     
-    public static func register(provider: AnalyticsProvider, for key: String) {
-        providers[.explicit(key)] = provider
+    public var metadata: [String: String] {
+        return [:]
+            .merging(deviceState) { (_, new) in new }
+            .merging(deviceInfo) { (_, new) in new }
+            .merging(preferredLocalization) { (_, new) in new }
+            .merging(applicationInformation) { (_, new) in new }
+    }
+
+    private var deviceState: [String: String] {
+        return [
+            "DeviceState_Orientation": UIDevice.current.orientationDescription,
+            "DeviceState_BatteryState": UIDevice.current.batteryStateDescription,
+            "DeviceState_BatteryLevel": UIDevice.current.batteryLevelDescription,
+        ]
     }
     
-    public static func removeProvider(for key: String) {
-        providers[.explicit(key)] = nil
-    }
+    lazy private var applicationInformation: [String: String] = {
+        return Bundle.main.analyticsAppInfo
+    }()
     
-    public static func register(provider: AnalyticsProvider) {
-        let key = String(describing: type(of: provider))
-        providers[.inferred(key)] = provider
-    }
+    lazy private var preferredLocalization: [String: String] = {
+        return NSLocale.analyticsInfo
+    }()
+
+    private lazy var deviceInfo: [String: String] = {
+        return UIDevice.analyticsInfo
+    }()
     
-    public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
-        providers[.inferred(String(describing: type))] = nil
-    }
-    
+
 }

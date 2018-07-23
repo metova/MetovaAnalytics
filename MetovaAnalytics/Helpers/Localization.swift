@@ -2,7 +2,7 @@
 //  MetovaAnalytics.swift
 //  MetovaAnalytics
 //
-//  Created by Nick Griffith on 7/19/18
+//  Created by Nick Griffith on 7/23/18
 //  Copyright © 2018 Metova. All rights reserved.
 //
 //  MIT License
@@ -27,43 +27,32 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-public struct Analytics {
-    
-    private init() {}
-    
-    private static var providers: [ProviderKey: AnalyticsProvider] = [:]
-    
-    public static func send(event: AnalyticsEvent) {
-        for provider in providers.values {
-            provider.send(event: event)
-        }
-    }
-    
-}
+import Foundation
 
-// Providers
-extension Analytics {
+extension NSLocale {
     
-    enum ProviderKey: Hashable {
-        case explicit(String)
-        case inferred(String)
-    }
-    
-    public static func register(provider: AnalyticsProvider, for key: String) {
-        providers[.explicit(key)] = provider
-    }
-    
-    public static func removeProvider(for key: String) {
-        providers[.explicit(key)] = nil
-    }
-    
-    public static func register(provider: AnalyticsProvider) {
-        let key = String(describing: type(of: provider))
-        providers[.inferred(key)] = provider
-    }
-    
-    public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
-        providers[.inferred(String(describing: type))] = nil
+    internal static var analyticsInfo: [String: String] {
+        
+        var localizationDictionary = [String: String]()
+        
+        guard let localeIdentifier = NSLocale.preferredLanguages.first else {
+            return localizationDictionary
+        }
+        
+        let components = NSLocale.components(fromLocaleIdentifier: localeIdentifier)
+        
+        if let countryCode = components[NSLocale.Key.countryCode.rawValue] {
+            localizationDictionary["LocalePref_CountryCode"] = countryCode
+        }
+        
+        if let languageCode = components[NSLocale.Key.languageCode.rawValue] {
+            localizationDictionary["LocalePref_LanguageCode"] = languageCode
+            localizationDictionary["LocalePref_CanonicalLanguageId"] = NSLocale.canonicalLanguageIdentifier(from: languageCode)
+            localizationDictionary["LocalePref_LanguageDisplayName"] = NSLocale(localeIdentifier: localeIdentifier).displayName(forKey: .identifier, value: languageCode)
+        }
+        
+        return localizationDictionary
+        
     }
     
 }

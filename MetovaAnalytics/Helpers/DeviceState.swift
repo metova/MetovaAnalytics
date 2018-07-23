@@ -1,8 +1,8 @@
 //
-//  MetovaAnalyticsTest.swift
+//  MetovaAnalytics.swift
 //  MetovaAnalytics
 //
-//  Created on 5/3/18.
+//  Created by Nick Griffith on 7/23/18
 //  Copyright © 2018 Metova. All rights reserved.
 //
 //  MIT License
@@ -26,3 +26,41 @@
 //  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
+
+import UIKit.UIDevice
+
+extension UIDevice {
+    
+    internal var orientationDescription: String {
+        switch UIDevice.current.orientation {
+        case .portrait, .portraitUpsideDown:
+            return "portrait"
+        case .landscapeLeft, .landscapeRight:
+            return "landscape"
+        case .faceUp:
+            return "face up"
+        case .faceDown:
+            return "face down"
+        case .unknown:
+            return "unknown"
+        }
+    }
+    
+    internal var batteryStateDescription: String {
+        switch UIDevice.current.batteryState {
+        case .unplugged:
+            return "on battery, discharging"
+        case .charging:
+            return "plugged in, less than 100%"
+        case .full:
+            return "plugged in, at 100%"
+        case .unknown:
+            return "unknown"
+        }
+    }
+ 
+    internal var batteryLevelDescription: String {
+        return String(format: "%0.2f", UIDevice.current.batteryLevel)
+    }
+    
+}

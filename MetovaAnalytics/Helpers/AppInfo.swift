@@ -2,7 +2,7 @@
 //  MetovaAnalytics.swift
 //  MetovaAnalytics
 //
-//  Created by Nick Griffith on 7/19/18
+//  Created by Nick Griffith on 7/23/18
 //  Copyright © 2018 Metova. All rights reserved.
 //
 //  MIT License
@@ -27,43 +27,42 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-public struct Analytics {
-    
-    private init() {}
-    
-    private static var providers: [ProviderKey: AnalyticsProvider] = [:]
-    
-    public static func send(event: AnalyticsEvent) {
-        for provider in providers.values {
-            provider.send(event: event)
-        }
-    }
-    
-}
+import Foundation
 
-// Providers
-extension Analytics {
-    
-    enum ProviderKey: Hashable {
-        case explicit(String)
-        case inferred(String)
+extension Bundle {
+
+    internal var analyticsAppInfo: [String: String] {
+        var appInfo = [String: String]()
+        
+        guard let info = Bundle.main.infoDictionary else {
+            return appInfo
+        }
+        
+        if let bundleId = info["CFBundleIdentifier"] as? String {
+            appInfo["AppInfo_BundleId"] = bundleId
+        }
+        
+        if let executableName = info["CFBundleExecutable"] as? String {
+            appInfo["AppInfo_ExecutableName"] = executableName
+        }
+        
+        if let displayName = info["CFBundleName"] as? String {
+            appInfo["AppInfo_DisplayName"] = displayName
+        }
+        
+        if let appVersion = info["CFBundleShortVersionString"] as? String {
+            appInfo["AppInfo_Version"] = appVersion
+        }
+        
+        if let buildNumber = info["CFBundleVersion"] as? String {
+            appInfo["AppInfo_BuildNumber"] = buildNumber
+        }
+        
+        if let minimumOSVersion = info["MinimumOSVersion"] as? String {
+            appInfo["AppInfo_MinimumOSVersion"] = minimumOSVersion
+        }
+        
+        return appInfo
     }
-    
-    public static func register(provider: AnalyticsProvider, for key: String) {
-        providers[.explicit(key)] = provider
-    }
-    
-    public static func removeProvider(for key: String) {
-        providers[.explicit(key)] = nil
-    }
-    
-    public static func register(provider: AnalyticsProvider) {
-        let key = String(describing: type(of: provider))
-        providers[.inferred(key)] = provider
-    }
-    
-    public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
-        providers[.inferred(String(describing: type))] = nil
-    }
-    
+
 }
