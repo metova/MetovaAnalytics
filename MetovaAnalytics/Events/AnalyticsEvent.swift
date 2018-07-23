@@ -29,13 +29,13 @@
 
 import Foundation
 
-public class AnalyticsEvent {
+open class AnalyticsEvent {
     
-    public var name: String {
+    open var name: String {
         fatalError("AnalyticsEvent is an abstract class.  Name must be provided by a subclass.")
     }
     
-    public var metadata: [String: String] {
+    open var metadata: [String: String] {
         return [:]
             .merging(deviceState) { (_, new) in new }
             .merging(deviceInfo) { (_, new) in new }
