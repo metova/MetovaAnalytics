@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'MetovaAnalytics'
-  s.version      = '0.1.0'
+  s.version      = '0.2.0'
   s.summary      = 'MetovaAnalytics is an analytics scaffolding framework.'
 
   s.homepage = 'http://metova.com'
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.source = { :git => 'https://lab.metova.com/metova/analytics-ios.git', :tag => s.version.to_s }
 
-  s.platform = :ios, '11.0'
+  s.platform = :ios, '9.0'
   s.swift_version = '4.0'
 
   s.source_files        = 'MetovaAnalytics', 'MetovaAnalytics/**/*.{h,m,swift}'
