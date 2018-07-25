@@ -32,6 +32,7 @@ import UIKit.UIDevice
 extension UIDevice {
     
     internal var orientationDescription: String {
+        
         switch UIDevice.current.orientation {
         case .portrait, .portraitUpsideDown:
             return "portrait"
@@ -47,6 +48,7 @@ extension UIDevice {
     }
     
     internal var batteryStateDescription: String {
+        
         switch UIDevice.current.batteryState {
         case .unplugged:
             return "on battery, discharging"
@@ -60,7 +62,7 @@ extension UIDevice {
     }
  
     internal var batteryLevelDescription: String {
+        
         return String(format: "%0.2f", UIDevice.current.batteryLevel)
     }
-    
 }
