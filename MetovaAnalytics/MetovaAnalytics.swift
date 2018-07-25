@@ -29,41 +29,55 @@
 
 public struct Analytics {
     
+    // MARK: Initializers
+    
     private init() {}
+    
+    // MARK: Private Properties
     
     private static var providers: [ProviderKey: AnalyticsProvider] = [:]
     
+    // MARK: Actions
+    
     public static func send(event: AnalyticsEvent) {
+        
         for provider in providers.values {
+            
             provider.send(event: event)
         }
     }
-    
 }
 
-// Providers
+// MARK: - Providers
 extension Analytics {
     
-    enum ProviderKey: Hashable {
+    private enum ProviderKey: Hashable {
+        
         case explicit(String)
         case inferred(String)
     }
     
+    // MARK: Actions
+    
     public static func register(provider: AnalyticsProvider, for key: String) {
+        
         providers[.explicit(key)] = provider
     }
     
     public static func removeProvider(for key: String) {
+        
         providers[.explicit(key)] = nil
     }
     
     public static func register(provider: AnalyticsProvider) {
+        
         let key = String(describing: type(of: provider))
         providers[.inferred(key)] = provider
     }
     
     public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
-        providers[.inferred(String(describing: type))] = nil
+        
+        let key = String(describing: type)
+        providers[.inferred(key)] = nil
     }
-    
 }

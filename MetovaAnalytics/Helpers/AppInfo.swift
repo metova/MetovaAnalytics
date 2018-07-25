@@ -32,6 +32,7 @@ import Foundation
 extension Bundle {
 
     internal var analyticsAppInfo: [String: String] {
+        
         var appInfo = [String: String]()
         
         guard let info = Bundle.main.infoDictionary else {
@@ -64,5 +65,4 @@ extension Bundle {
         
         return appInfo
     }
-
 }

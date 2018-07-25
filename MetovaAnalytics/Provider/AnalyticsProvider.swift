@@ -32,5 +32,4 @@ import Foundation
 public protocol AnalyticsProvider {
     
     func send(event: AnalyticsEvent)
-    
 }

@@ -31,21 +31,30 @@ import Foundation
 
 open class AnalyticsEvent {
     
-    public init() {}
+    // MARK: Open Properties
     
     open var name: String {
-        fatalError("AnalyticsEvent is an abstract class.  Name must be provided by a subclass.")
+        
+        fatalError("AnalyticsEvent is an abstract class. Name must be provided by a subclass.")
     }
     
-    open var metadata: [String: String] {
+    open var metadata: [String: Any] {
+        
         return [:]
             .merging(deviceState) { (_, new) in new }
             .merging(deviceInfo) { (_, new) in new }
             .merging(preferredLocalization) { (_, new) in new }
             .merging(applicationInformation) { (_, new) in new }
     }
+    
+    // MARK: Initializers
+    
+    public init() {}
+    
+    // MARK: Private Properties
 
     private var deviceState: [String: String] {
+        
         return [
             "DeviceState_Orientation": UIDevice.current.orientationDescription,
             "DeviceState_BatteryState": UIDevice.current.batteryStateDescription,
@@ -53,17 +62,9 @@ open class AnalyticsEvent {
         ]
     }
     
-    lazy private var applicationInformation: [String: String] = {
-        return Bundle.main.analyticsAppInfo
-    }()
+    private lazy var applicationInformation: [String: String] = Bundle.main.analyticsAppInfo
     
-    lazy private var preferredLocalization: [String: String] = {
-        return NSLocale.analyticsInfo
-    }()
+    private lazy var preferredLocalization: [String: String] = NSLocale.analyticsInfo
 
-    private lazy var deviceInfo: [String: String] = {
-        return UIDevice.analyticsInfo
-    }()
-    
-
+    private lazy var deviceInfo: [String: String] = UIDevice.analyticsInfo
 }

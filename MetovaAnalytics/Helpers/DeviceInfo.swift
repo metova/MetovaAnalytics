@@ -44,6 +44,7 @@ private var deviceModelName: String = {
 extension UIDevice {
     
     internal static var analyticsInfo: [String: String] {
+        
         return [
             "DeviceInfo_OS_Name": self.current.systemName,
             "DeviceInfo_OS_Version": self.current.systemVersion,
@@ -53,10 +54,12 @@ extension UIDevice {
     }
     
     private static var modelName: String {
+        
         return deviceModelName
     }
     
     private static var deviceName: String {
+        
         switch modelName {
             
         // Device: Simulator
@@ -152,5 +155,4 @@ extension UIDevice {
             return "unknown"
         }
     }
-    
 }
