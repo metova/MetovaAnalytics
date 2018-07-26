@@ -51,7 +51,7 @@ public struct Analytics {
 // MARK: - Providers
 extension Analytics {
     
-    private enum ProviderKey: Hashable {
+    enum ProviderKey {
         
         case explicit(String)
         case inferred(String)
