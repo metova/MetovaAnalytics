@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Hashable
 extension Analytics.ProviderKey: Hashable {
     
-    var hashValue: Int {
+    public var hashValue: Int {
         
         switch self {
         case .explicit(let string):
@@ -21,7 +21,7 @@ extension Analytics.ProviderKey: Hashable {
         }
     }
     
-    static func == (lhs: Analytics.ProviderKey, rhs: Analytics.ProviderKey) -> Bool {
+    public static func == (lhs: Analytics.ProviderKey, rhs: Analytics.ProviderKey) -> Bool {
         
         switch (lhs, rhs) {
         case (.explicit(let lhs), .explicit(let rhs)):
