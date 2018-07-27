@@ -35,7 +35,7 @@ public struct Analytics {
     
     // MARK: Private Properties
     
-    private static var providers: [ProviderKey: AnalyticsProvider] = [:]
+    fileprivate static var providers: [ProviderKey: AnalyticsProvider] = [:]
     
     // MARK: Actions
     
@@ -51,7 +51,7 @@ public struct Analytics {
 // MARK: - Providers
 extension Analytics {
     
-    private enum ProviderKey: Hashable {
+    internal enum ProviderKey: Hashable {
         
         case explicit(String)
         case inferred(String)
