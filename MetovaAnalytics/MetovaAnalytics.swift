@@ -35,7 +35,7 @@ public struct Analytics {
     
     // MARK: Private Properties
     
-    private static var providers: [ProviderKey: AnalyticsProvider] = [:]
+    fileprivate static var providers: [ProviderKey: AnalyticsProvider] = [:]
     
     // MARK: Actions
     

@@ -9,7 +9,8 @@
 import Foundation
 
 // MARK: - Hashable
-@available(swift, obsoleted: 4.1)
+
+#if !swift(>=4.1)
 extension Analytics.ProviderKey {
     
     public var hashValue: Int {
@@ -34,3 +35,4 @@ extension Analytics.ProviderKey {
         }
     }
 }
+#endif
