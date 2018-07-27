@@ -9,7 +9,8 @@
 import Foundation
 
 // MARK: - Hashable
-extension Analytics.ProviderKey: Hashable {
+@available(swift, obsoleted: 4.1)
+extension Analytics.ProviderKey {
     
     public var hashValue: Int {
         
