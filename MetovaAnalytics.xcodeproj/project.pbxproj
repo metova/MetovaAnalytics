@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11C88456215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88454215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift */; };
+		11C88457215EB92B00806790 /* FirebaseAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88455215EB92B00806790 /* FirebaseAnalyticsProvider.swift */; };
+		11C8845A215EBAD000806790 /* NonFatalErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */; };
+		11C8845B215EBAD000806790 /* ScreenViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88459215EBAD000806790 /* ScreenViewEvent.swift */; };
 		3EDDDCA8FFB710FCCA595789 /* Pods_MetovaAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82841BD7A63D61A1D946F403 /* Pods_MetovaAnalytics.framework */; };
 		4A3FFC62215EB76C002B7807 /* AnalyticsEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */; };
 		4A3FFC64215EBA89002B7807 /* AnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11C88454215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsAnalyticsProvider.swift; sourceTree = "<group>"; };
+		11C88455215EB92B00806790 /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
+		11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonFatalErrorEvent.swift; sourceTree = "<group>"; };
+		11C88459215EBAD000806790 /* ScreenViewEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenViewEvent.swift; sourceTree = "<group>"; };
 		3CBAD8F00C87DFF7518C1D5E /* Pods-MetovaAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalytics/Pods-MetovaAnalytics.release.xcconfig"; sourceTree = "<group>"; };
 		4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEventTests.swift; sourceTree = "<group>"; };
 		4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
@@ -52,7 +60,7 @@
 		4A60E1EC21061827002C47EC /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		4A60E1EE21061884002C47EC /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		4A60E1F0210619BC002C47EC /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
-		4A60E1F321061C0C002C47EC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		4A60E1F321061C0C002C47EC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4A60E1F421061C0C002C47EC /* MetovaAnalytics.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MetovaAnalytics.podspec; sourceTree = "<group>"; };
 		4A60E1F621061C0C002C47EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A60E1F721061C0C002C47EC /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
@@ -162,6 +170,8 @@
 		4A60E1DE21061522002C47EC /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */,
+				11C88459215EBAD000806790 /* ScreenViewEvent.swift */,
 				4A60E1DF21061522002C47EC /* AnalyticsEvent.swift */,
 			);
 			path = Events;
@@ -170,6 +180,8 @@
 		4A60E1E021061522002C47EC /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				11C88454215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift */,
+				11C88455215EB92B00806790 /* FirebaseAnalyticsProvider.swift */,
 				4A60E1E121061522002C47EC /* AnalyticsProvider.swift */,
 			);
 			path = Provider;
@@ -386,13 +398,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C88456215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */,
 				4A60E1F1210619BC002C47EC /* DeviceInfo.swift in Sources */,
 				4A60E1E221061522002C47EC /* MetovaAnalytics.swift in Sources */,
 				4A60E1ED21061827002C47EC /* AppInfo.swift in Sources */,
 				4A60E1EF21061884002C47EC /* Localization.swift in Sources */,
 				B4157292210A3D4B0096FC74 /* ProviderKey+Hashable.swift in Sources */,
 				4A60E1EB210616A7002C47EC /* DeviceState.swift in Sources */,
+				11C8845A215EBAD000806790 /* NonFatalErrorEvent.swift in Sources */,
 				4A60E1E321061522002C47EC /* AnalyticsEvent.swift in Sources */,
+				11C8845B215EBAD000806790 /* ScreenViewEvent.swift in Sources */,
+				11C88457215EB92B00806790 /* FirebaseAnalyticsProvider.swift in Sources */,
 				4A60E1E421061522002C47EC /* AnalyticsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

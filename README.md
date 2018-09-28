@@ -79,9 +79,12 @@ pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', 
 
 # Usage
 
-TODO: Fill out the usage section with examples of using the code from the library.  This should include code snippets accompanied by plain English explanations.
-
+``` swift
+for provider in [FirebaseAnalyticsProvider(), CrashlyticsAnalyticsProvider()] {
+	Analytics.register(provider: provider)
+}
 -----
+```
 
 # Documentation
 
