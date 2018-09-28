@@ -11,8 +11,8 @@
 		4A3FFC62215EB76C002B7807 /* AnalyticsEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */; };
 		4A3FFC64215EBA89002B7807 /* AnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */; };
 		4A3FFC67215EBABD002B7807 /* MockEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC66215EBABD002B7807 /* MockEvent.swift */; };
+		4A3FFC69215EBBF0002B7807 /* MockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC68215EBBF0002B7807 /* MockProvider.swift */; };
 		4A60E1CD2106149F002C47EC /* MetovaAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A60E1C32106149F002C47EC /* MetovaAnalytics.framework */; };
-		4A60E1D22106149F002C47EC /* MetovaAnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1D12106149F002C47EC /* MetovaAnalyticsTests.swift */; };
 		4A60E1D42106149F002C47EC /* MetovaAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A60E1C62106149F002C47EC /* MetovaAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A60E1E221061522002C47EC /* MetovaAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */; };
 		4A60E1E321061522002C47EC /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1DF21061522002C47EC /* AnalyticsEvent.swift */; };
@@ -39,11 +39,11 @@
 		4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEventTests.swift; sourceTree = "<group>"; };
 		4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
 		4A3FFC66215EBABD002B7807 /* MockEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEvent.swift; sourceTree = "<group>"; };
+		4A3FFC68215EBBF0002B7807 /* MockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProvider.swift; sourceTree = "<group>"; };
 		4A60E1C32106149F002C47EC /* MetovaAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetovaAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A60E1C62106149F002C47EC /* MetovaAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetovaAnalytics.h; sourceTree = "<group>"; };
 		4A60E1C72106149F002C47EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MetovaAnalytics/Info.plist; sourceTree = "<group>"; };
 		4A60E1CC2106149F002C47EC /* MetovaAnalyticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetovaAnalyticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A60E1D12106149F002C47EC /* MetovaAnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetovaAnalyticsTests.swift; sourceTree = "<group>"; };
 		4A60E1D32106149F002C47EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetovaAnalytics.swift; sourceTree = "<group>"; };
 		4A60E1DF21061522002C47EC /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
@@ -103,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				4A3FFC66215EBABD002B7807 /* MockEvent.swift */,
+				4A3FFC68215EBBF0002B7807 /* MockProvider.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -153,7 +154,6 @@
 			children = (
 				4A3FFC65215EBAAF002B7807 /* Mocks */,
 				4A3FFC5D215EB609002B7807 /* Core */,
-				4A60E1D12106149F002C47EC /* MetovaAnalyticsTests.swift */,
 				4A60E1D32106149F002C47EC /* Info.plist */,
 			);
 			path = MetovaAnalyticsTests;
@@ -401,8 +401,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3FFC69215EBBF0002B7807 /* MockProvider.swift in Sources */,
 				4A3FFC64215EBA89002B7807 /* AnalyticsTests.swift in Sources */,
-				4A60E1D22106149F002C47EC /* MetovaAnalyticsTests.swift in Sources */,
 				4A3FFC67215EBABD002B7807 /* MockEvent.swift in Sources */,
 				4A3FFC62215EB76C002B7807 /* AnalyticsEventTests.swift in Sources */,
 			);
