@@ -49,7 +49,8 @@ Pod::Spec.new do |s|
   s.subspec 'Crashlytics' do |crashlytics|
 	  crashlytics.dependency 'MetovaAnalytics/Core'
 	  crashlytics.dependency 'Crashlytics'
-	
+      crashlytics.dependency 'Firebase'
+
     crashlytics.source_files = [
       'MetovaAnalytics/Crashlytics',
       'MetovaAnalytics/Crashlytics/**/*.{h,m,swift}'
