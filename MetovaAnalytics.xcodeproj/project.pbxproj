@@ -77,6 +77,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4F8DEC215E95DE00E3461C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4A60E1C62106149F002C47EC /* MetovaAnalytics.h */,
+				4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */,
+				4A60E1E021061522002C47EC /* Provider */,
+				4A60E1DE21061522002C47EC /* Events */,
+				4A60E1E921061663002C47EC /* Helpers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		4A60E1B92106149F002C47EC = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +113,7 @@
 		4A60E1C52106149F002C47EC /* MetovaAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				4A60E1C62106149F002C47EC /* MetovaAnalytics.h */,
-				4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */,
-				4A60E1E021061522002C47EC /* Provider */,
-				4A60E1DE21061522002C47EC /* Events */,
-				4A60E1E921061663002C47EC /* Helpers */,
+				4A4F8DEC215E95DE00E3461C /* Core */,
 			);
 			path = MetovaAnalytics;
 			sourceTree = "<group>";
