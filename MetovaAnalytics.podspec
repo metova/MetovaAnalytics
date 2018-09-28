@@ -5,14 +5,28 @@ Pod::Spec.new do |s|
 
   s.homepage = 'http://metova.com'
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
-  s.authors  = { 'Nick Griffith' => 'nick.griffith@metova.com' }
+  s.authors  = {
+    'Metova, Inc.' => 'pods@metova.com',
+    'Nick Griffith' => 'nick.griffith@metova.com'
+  }
 
   s.source = { :git => 'https://lab.metova.com/metova/analytics-ios.git', :tag => s.version.to_s }
 
   s.platform = :ios, '9.0'
   s.swift_version = '4.2'
 
-  s.source_files        = 'MetovaAnalytics/Core', 'MetovaAnalytics/Core/**/*.{h,m,swift}'
-  s.public_header_files = 'MetovaAnalytics/Core/**/*.h'
-  s.exclude_files       = 'MetovaAnalytics/Core/Exclude'
+  s.default_subspecs = 'Core'
+
+  s.subspec 'Core' do |core|
+    core.source_files = [
+      'MetovaAnalytics/Core',
+      'MetovaAnalytics/Core/**/*.{h,m,swift}'
+    ]
+    core.public_header_files = [
+      'MetovaAnalytics/Core/**/*.h'
+    ]
+    core.exclude_files = [
+      'MetovaAnalytics/Core/Exclude'
+    ]
+  end
 end
