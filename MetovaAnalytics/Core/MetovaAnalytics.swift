@@ -27,6 +27,7 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/// Namespace to drive the MetovaAnalytics framework
 public struct Analytics {
     
     // MARK: Initializers
@@ -39,6 +40,9 @@ public struct Analytics {
     
     // MARK: Actions
     
+    /// Sends an analytics event to all the registered providers
+    ///
+    /// - Parameter event: The event to send
     public static func send(event: AnalyticsEvent) {
         
         for provider in providers.values {
@@ -59,22 +63,36 @@ extension Analytics {
     
     // MARK: Actions
     
+    /// Registers a provider under a given explit key.  This key can be used later to unregister the provider.
+    ///
+    /// - Parameters:
+    ///   - provider: The provider to register
+    ///   - key: The key to use to register the provider
     public static func register(provider: AnalyticsProvider, for key: String) {
         
         providers[.explicit(key)] = provider
     }
     
+    /// Removes a provider registered under an explicit key.
+    ///
+    /// - Parameter key: The key of the provider to unregister
     public static func removeProvider(for key: String) {
         
         providers[.explicit(key)] = nil
     }
     
+    /// Registers a provider.  Only one provider per class can be registered via this method.  Registering a provider of the same type will overwrite a previously registered provider.  In order to register more than one provider per key, register them under explicit keys.
+    ///
+    /// - Parameter provider: The provider to register
     public static func register(provider: AnalyticsProvider) {
         
         let key = String(describing: type(of: provider))
         providers[.inferred(key)] = provider
     }
     
+    /// Removes a provider registered without an explicit key
+    ///
+    /// - Parameter type: The type of provider to remove
     public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
         
         let key = String(describing: type)
