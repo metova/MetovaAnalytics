@@ -203,6 +203,8 @@
 			buildConfigurationList = 4A60E1D72106149F002C47EC /* Build configuration list for PBXNativeTarget "MetovaAnalytics" */;
 			buildPhases = (
 				B708751CFC7FA517E774289B /* [CP] Check Pods Manifest.lock */,
+				4A3FFC5C215EB053002B7807 /* TODO Warnings */,
+				4A3FFC5B215EB036002B7807 /* SwiftLint */,
 				4A60E1BE2106149F002C47EC /* Sources */,
 				4A60E1BF2106149F002C47EC /* Frameworks */,
 				4A60E1C02106149F002C47EC /* Headers */,
@@ -290,6 +292,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A3FFC5B215EB036002B7807 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		4A3FFC5C215EB053002B7807 /* TODO Warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "TODO Warnings";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nKEYWORDS=\"TODO:\"\nfind \"${SRCROOT}/MetovaTestKit\" \"${SRCROOT}/MetovaTestKitTests\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.mm\" -or -name \"*.swift\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\nfi\n";
+		};
 		B708751CFC7FA517E774289B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
