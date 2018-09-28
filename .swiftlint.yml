@@ -42,6 +42,7 @@ variable_name:
     - rs
     - URI
     - URL
+    - new
 trailing_comma:
     mandatory_comma: true
 trailing_newline: error
