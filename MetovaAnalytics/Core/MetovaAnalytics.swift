@@ -27,6 +27,7 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/// The base object for MetovaAnalytics.
 public struct Analytics {
     
     // MARK: Initializers
@@ -39,6 +40,9 @@ public struct Analytics {
     
     // MARK: Actions
     
+    /// Send an AnalyticsEvent to a AnalyticsProvider.
+    ///
+    /// - Parameter event: The AnalyticsEvent to send.
     public static func send(event: AnalyticsEvent) {
         
         for provider in providers.values {
@@ -59,22 +63,36 @@ extension Analytics {
     
     // MARK: Actions
     
+    /// Registers an AnalyticsProvider with Analytics system.
+    ///
+    /// - Parameters:
+    ///   - provider: The provider to use when sending analytics data.
+    ///   - key: The name of the Analytics provider
     public static func register(provider: AnalyticsProvider, for key: String) {
         
         providers[.explicit(key)] = provider
     }
     
+    /// Unregisters an AnalyticsProvider with Analytics system.
+    ///
+    /// - Parameter key: The provider to use when sending analytics data.
     public static func removeProvider(for key: String) {
         
         providers[.explicit(key)] = nil
     }
     
+    /// Registers an AnalyticsProvider with an inferred name.
+    ///
+    /// - Parameter provider: The AnalyticsProvider to use when sending analytics data.
     public static func register(provider: AnalyticsProvider) {
         
         let key = String(describing: type(of: provider))
         providers[.inferred(key)] = provider
     }
     
+    /// Unregisters and AnalyticsProvider for a specific Provider type.
+    ///
+    /// - Parameter type: The type of AnalyticsProvider to unregister
     public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
         
         let key = String(describing: type)

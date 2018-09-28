@@ -29,7 +29,11 @@
 
 import Foundation
 
+/// The protocol AnalyticsProviders must conform to.
 public protocol AnalyticsProvider {
     
+    /// Send an AnalyticsEvent to a AnalyticsProvider.
+    ///
+    /// - Parameter event: The AnalyticsEvent to send.
     func send(event: AnalyticsEvent)
 }

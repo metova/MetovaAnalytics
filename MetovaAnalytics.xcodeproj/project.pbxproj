@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11C88456215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88454215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift */; };
-		11C88457215EB92B00806790 /* FirebaseAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88455215EB92B00806790 /* FirebaseAnalyticsProvider.swift */; };
 		11C8845A215EBAD000806790 /* NonFatalErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */; };
-		11C8845B215EBAD000806790 /* ScreenViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88459215EBAD000806790 /* ScreenViewEvent.swift */; };
+		11C8845F215EC53A00806790 /* FirebaseAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */; };
+		11C88462215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */; };
 		3EDDDCA8FFB710FCCA595789 /* Pods_MetovaAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82841BD7A63D61A1D946F403 /* Pods_MetovaAnalytics.framework */; };
 		4A3FFC62215EB76C002B7807 /* AnalyticsEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */; };
 		4A3FFC64215EBA89002B7807 /* AnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */; };
@@ -39,10 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11C88454215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsAnalyticsProvider.swift; sourceTree = "<group>"; };
-		11C88455215EB92B00806790 /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
 		11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonFatalErrorEvent.swift; sourceTree = "<group>"; };
-		11C88459215EBAD000806790 /* ScreenViewEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenViewEvent.swift; sourceTree = "<group>"; };
+		11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
+		11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsAnalyticsProvider.swift; sourceTree = "<group>"; };
 		3CBAD8F00C87DFF7518C1D5E /* Pods-MetovaAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalytics/Pods-MetovaAnalytics.release.xcconfig"; sourceTree = "<group>"; };
 		4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEventTests.swift; sourceTree = "<group>"; };
 		4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
@@ -90,6 +88,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C8845D215EC53A00806790 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		11C88460215EC55D00806790 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */,
+				11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
 		4A3FFC5D215EB609002B7807 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				4A4F8DEC215E95DE00E3461C /* Core */,
+				11C88460215EC55D00806790 /* Crashlytics */,
+				11C8845D215EC53A00806790 /* Firebase */,
 			);
 			path = MetovaAnalytics;
 			sourceTree = "<group>";
@@ -170,8 +187,6 @@
 		4A60E1DE21061522002C47EC /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */,
-				11C88459215EBAD000806790 /* ScreenViewEvent.swift */,
 				4A60E1DF21061522002C47EC /* AnalyticsEvent.swift */,
 			);
 			path = Events;
@@ -180,8 +195,6 @@
 		4A60E1E021061522002C47EC /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				11C88454215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift */,
-				11C88455215EB92B00806790 /* FirebaseAnalyticsProvider.swift */,
 				4A60E1E121061522002C47EC /* AnalyticsProvider.swift */,
 			);
 			path = Provider;
@@ -398,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C88456215EB92B00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */,
+				11C8845F215EC53A00806790 /* FirebaseAnalyticsProvider.swift in Sources */,
 				4A60E1F1210619BC002C47EC /* DeviceInfo.swift in Sources */,
 				4A60E1E221061522002C47EC /* MetovaAnalytics.swift in Sources */,
 				4A60E1ED21061827002C47EC /* AppInfo.swift in Sources */,
@@ -407,9 +420,8 @@
 				4A60E1EB210616A7002C47EC /* DeviceState.swift in Sources */,
 				11C8845A215EBAD000806790 /* NonFatalErrorEvent.swift in Sources */,
 				4A60E1E321061522002C47EC /* AnalyticsEvent.swift in Sources */,
-				11C8845B215EBAD000806790 /* ScreenViewEvent.swift in Sources */,
-				11C88457215EB92B00806790 /* FirebaseAnalyticsProvider.swift in Sources */,
 				4A60E1E421061522002C47EC /* AnalyticsProvider.swift in Sources */,
+				11C88462215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,14 +7,15 @@
 import Crashlytics
 import Fabric
 
-class CrashlyticsAnalyticsProvider: AnalyticsProvider {
+/// The AnalyticsProvider for Crashlytics.
+public class CrashlyticsAnalyticsProvider: AnalyticsProvider {
     
     private struct Keys {
         
         static let configuration = "Environment"
     }
     
-    var reportableValues: [String: String] = [:] {
+    private var reportableValues: [String: String] = [:] {
         didSet {
             for key in oldValue.keys {
                 Crashlytics.sharedInstance().setObjectValue(nil, forKey: key)
@@ -26,13 +27,19 @@ class CrashlyticsAnalyticsProvider: AnalyticsProvider {
         }
     }
     
-    init(reportableValues: [String: String] = [:]) {
+    /// Initialize the CrashlyticsAnalyticsProvider with a dictionary of key-value pairs to include in AnalyticsEvents sent to Crashlytics.
+    ///
+    /// - Parameter reportableValues: <#reportableValues description#>
+    public init(reportableValues: [String: String] = [:]) {
         Fabric.with([Crashlytics.self])
 
         self.reportableValues = reportableValues
     }
     
-    func send(event: AnalyticsEvent) {
+    /// Send an Analytics event to Crashlytics.
+    ///
+    /// - Parameter event: The AnalyticsEvent to send to Crashlytics.
+    public func send(event: AnalyticsEvent) {
         guard let event = event as? NonFatalErrorEvent else { return }
         
         for (key, value) in event.metadata {
