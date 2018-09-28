@@ -1,8 +1,7 @@
 //
-//  ProviderKey+Hashable.swift
-//  MetovaAnalytics
+// AnalyticsTests.swift
 //
-//  Created by Chris Martin on 7/26/18.
+// Created by Nick Griffith on 9/28/18
 //  Copyright © 2018 Metova. All rights reserved.
 //
 //  MIT License
@@ -27,33 +26,9 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-import Foundation
+import XCTest
+@testable import MetovaAnalytics
 
-// MARK: - Hashable
-
-#if !swift(>=4.1)
-extension Analytics.ProviderKey {
+class AnalyticsTests: XCTestCase {
     
-    public var hashValue: Int {
-        
-        switch self {
-        case .explicit(let string):
-            return "explicit(\(string))".hashValue
-        case .inferred(let string):
-            return "inferred(\(string))".hashValue
-        }
-    }
-    
-    public static func == (lhs: Analytics.ProviderKey, rhs: Analytics.ProviderKey) -> Bool {
-        
-        switch (lhs, rhs) {
-        case (.explicit(let lhs), .explicit(let rhs)):
-            return lhs == rhs
-        case (.inferred(let lhs), .inferred(let rhs)):
-            return lhs == rhs
-        default:
-            return false
-        }
-    }
 }
-#endif
