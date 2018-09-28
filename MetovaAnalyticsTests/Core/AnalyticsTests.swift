@@ -31,4 +31,20 @@ import XCTest
 
 class AnalyticsTests: XCTestCase {
     
+    func testReceivesEvents() {
+        
+        let eventExpectation = expectation(description: "Event Fired")
+        
+        let provider = MockAnalyticsProvider { _ in
+            eventExpectation.fulfill()
+        }
+        
+        Analytics.register(provider: provider, for: "Mock")
+        defer { Analytics.removeProvider(for: "Mock") }
+        
+        Analytics.send(event: MockEvent())
+        
+        waitForExpectations(timeout: 0, handler: nil)
+    }
+    
 }
