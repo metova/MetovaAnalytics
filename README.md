@@ -10,7 +10,7 @@
  <br/>
 </p>
 
-MetovaAnalytics is in need of a description.
+MetovaAnalytics is a universal analytics framework for handling analytics events with any number of analytics providers.
 
 - [Requirements](#requirements)
 - [Communication](#communication)
@@ -26,8 +26,8 @@ MetovaAnalytics is in need of a description.
 
 # Requirements
 
-- Swift 4.0
-- iOS 11+
+- Swift 4.2
+- iOS 9+
 
 -----
 

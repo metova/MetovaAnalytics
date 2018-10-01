@@ -29,15 +29,19 @@
 
 import Foundation
 
+/// An abstract base class, from which custom events should inherit.
 open class AnalyticsEvent {
     
     // MARK: Open Properties
     
+    /// The name of the event.  This property should always be overridden by subclasses.
     open var name: String {
         
         fatalError("AnalyticsEvent is an abstract class. Name must be provided by a subclass.")
     }
     
+    /// The event's metadata.  This property can be optionally overridden.  It is highly recommended that the subclass merge it's new key-value pairs with its parent class's metadata.
+    /// `return super.metadata.merging(newKeyValues) { (_, new) in new }`
     open var metadata: [String: Any] {
         
         return [:]
@@ -49,6 +53,7 @@ open class AnalyticsEvent {
     
     // MARK: Initializers
     
+    /// Constructs the Event.
     public init() {}
     
     // MARK: Private Properties
