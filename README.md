@@ -19,14 +19,10 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 - [Credits](#credits)
 - [License](#license)
 
------
-
 # Requirements
 
 - Swift 4.2
 - iOS 9+
-
------
 
 # Communication
 
@@ -35,8 +31,6 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
-
------
 
 # Installation
 
@@ -72,13 +66,9 @@ If you would like to test a beta version of MetovaAnalytics, you can install the
 pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', :branch => 'develop'
 ```
 
------
-
 # Usage
 
 Please see the [documentation](../Documentation)
-
------
 
 # Credits
 
@@ -87,10 +77,6 @@ MetovaAnalytics is owned and maintained by [Metova Inc.](https://metova.com)
 [Contributors](https://github.com/Metova/MetovaAnalytics/graphs/contributors)
 
 If you would like to contribute to MetovaAnalytics, see our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
-
-
-
------
 
 # License
 
