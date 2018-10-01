@@ -68,7 +68,13 @@ pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', 
 
 # Usage
 
-Please see the [documentation](../Documentation).
+Metova Analytics makes reporting events to all of your analytics systems a simple one liner:
+
+```swift
+Analytics.send(event: someEvent)
+```
+
+For details discussing all the ways to use Metova Analytics, please see our [documentation](../Documentation).
 
 # Credits
 
