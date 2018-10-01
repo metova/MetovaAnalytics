@@ -15,10 +15,7 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 - [Requirements](#requirements)
 - [Communication](#communication)
 - [Installation](#installation)
-    - [CocoaPods](#cocoapods)
-    - [Swift Package Manager](#swift-package-manager)
-- [Usage](#usage)
-- [Documentation](#documentation)
+- [Documentation](../Documentation)
 - [Credits](#credits)
 - [License](#license)
 
@@ -33,7 +30,7 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 
 # Communication
 
-- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/alamofire). (Tag 'metova-pods')
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/metova-pods). (Tag 'metova-pods')
 - If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/metova-pods).
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
@@ -75,33 +72,11 @@ If you would like to test a beta version of MetovaAnalytics, you can install the
 pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', :branch => 'develop'
 ```
 
-## Swift Package Manager
-
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
-
-Once you have your Swift package set up, adding MetovaAnalytics as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/metova/MetovaAnalytics.git", from: "4.0.0")
-]
-```
-
 -----
 
 # Usage
 
-``` swift
-for provider in [FirebaseAnalyticsProvider(), CrashlyticsAnalyticsProvider()] {
-   Analytics.register(provider: provider)
-}
-```
-
------
-
-# Documentation
-
-Documentation can be found [here](http://metova.github.io/MetovaAnalytics/).
+Please see the [documentation](../Documentation)
 
 -----
 

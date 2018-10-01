@@ -46,6 +46,7 @@
 		4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
 		4A3FFC66215EBABD002B7807 /* MockEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEvent.swift; sourceTree = "<group>"; };
 		4A3FFC68215EBBF0002B7807 /* MockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProvider.swift; sourceTree = "<group>"; };
+		4A3FFCCD21628638002B7807 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A60E1C32106149F002C47EC /* MetovaAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetovaAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A60E1C62106149F002C47EC /* MetovaAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetovaAnalytics.h; sourceTree = "<group>"; };
 		4A60E1C72106149F002C47EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MetovaAnalytics/Info.plist; sourceTree = "<group>"; };
@@ -131,6 +132,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		4A3FFCCC2162850B002B7807 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				4A3FFCCD21628638002B7807 /* README.md */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
 		4A4F8DEC215E95DE00E3461C /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +158,7 @@
 				4A60E1F221061BEE002C47EC /* Supporting Files */,
 				4A60E1C52106149F002C47EC /* MetovaAnalytics */,
 				4A60E1D02106149F002C47EC /* MetovaAnalyticsTests */,
+				4A3FFCCC2162850B002B7807 /* Documentation */,
 				4A60E1C42106149F002C47EC /* Products */,
 				8725D5EF893D15F7361A9645 /* Pods */,
 				72FC8F92FB4C0098ECA493F5 /* Frameworks */,
