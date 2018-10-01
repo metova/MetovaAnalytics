@@ -68,7 +68,7 @@ pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', 
 
 # Usage
 
-Please see the [documentation](../Documentation)
+Please see the [documentation](../Documentation).
 
 # Credits
 
