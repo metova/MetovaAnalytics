@@ -27,7 +27,7 @@ MetovaAnalytics is in need of a description.
 # Requirements
 
 - Swift 4.0
-- iOS 9+
+- iOS 11+
 
 -----
 
@@ -55,7 +55,7 @@ To integrate MetovaAnalytics into your Xcode project using CocoaPods, specify it
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '11.0'
 use_frameworks!
 
 target 'YourTarget' do
@@ -75,16 +75,29 @@ If you would like to test a beta version of MetovaAnalytics, you can install the
 pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', :branch => 'develop'
 ```
 
+## Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
+
+Once you have your Swift package set up, adding MetovaAnalytics as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/metova/MetovaAnalytics.git", from: "4.0.0")
+]
+```
+
 -----
 
 # Usage
 
 ``` swift
 for provider in [FirebaseAnalyticsProvider(), CrashlyticsAnalyticsProvider()] {
-	Analytics.register(provider: provider)
+   Analytics.register(provider: provider)
 }
------
 ```
+
+-----
 
 # Documentation
 
