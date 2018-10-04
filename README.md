@@ -89,6 +89,8 @@ MetovaAnalytics is owned and maintained by [Metova Inc.](https://metova.com)
 
 If you would like to contribute to MetovaAnalytics, see our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
 
+This library was inspired by [Soroush Khanlou's nice article](http://khanlou.com/2017/12/misusing-subclassing/) about building an inheritance-based analytics system in Swift.  He included many fine suggestions, and we believe he is right.
+
 # License
 
 MetovaAnalytics is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
