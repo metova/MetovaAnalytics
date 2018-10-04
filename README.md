@@ -15,7 +15,8 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 - [Requirements](#requirements)
 - [Communication](#communication)
 - [Installation](#installation)
-- [Documentation](../Documentation)
+- [Usage](#Usage)
+    - [Documentation](./Documentation)
 - [Credits](#credits)
 - [License](#license)
 
