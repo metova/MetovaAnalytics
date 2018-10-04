@@ -42,11 +42,14 @@
 		11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
 		11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsAnalyticsProvider.swift; sourceTree = "<group>"; };
 		3CBAD8F00C87DFF7518C1D5E /* Pods-MetovaAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalytics/Pods-MetovaAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+		4A13DDD3216676B7006D5753 /* Events.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Events.md; sourceTree = "<group>"; };
+		4A13DDD4216676C4006D5753 /* Metadata.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Metadata.md; sourceTree = "<group>"; };
+		4A13DDD5216676DE006D5753 /* Providers.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Providers.md; sourceTree = "<group>"; };
+		4A13DDD62166770A006D5753 /* Analytics.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Analytics.md; sourceTree = "<group>"; };
 		4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEventTests.swift; sourceTree = "<group>"; };
 		4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
 		4A3FFC66215EBABD002B7807 /* MockEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEvent.swift; sourceTree = "<group>"; };
 		4A3FFC68215EBBF0002B7807 /* MockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProvider.swift; sourceTree = "<group>"; };
-		4A3FFCCD21628638002B7807 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A60E1C32106149F002C47EC /* MetovaAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetovaAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A60E1C62106149F002C47EC /* MetovaAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetovaAnalytics.h; sourceTree = "<group>"; };
 		4A60E1C72106149F002C47EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MetovaAnalytics/Info.plist; sourceTree = "<group>"; };
@@ -135,7 +138,10 @@
 		4A3FFCCC2162850B002B7807 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				4A3FFCCD21628638002B7807 /* README.md */,
+				4A13DDD62166770A006D5753 /* Analytics.md */,
+				4A13DDD3216676B7006D5753 /* Events.md */,
+				4A13DDD4216676C4006D5753 /* Metadata.md */,
+				4A13DDD5216676DE006D5753 /* Providers.md */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";

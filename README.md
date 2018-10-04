@@ -74,53 +74,15 @@ Metova Analytics makes reporting events to all of your analytics systems a simpl
 Analytics.send(event: someEvent)
 ```
 
-Using this system decouples your application from any specific analytics system.  It also conveniently allows you to start creating and recording the analytics events you know you want to record before actually hooking into any sort of analytics system.  If you've not registered any providers, sending events is effectively a noop.
+Metova Analytics is comprised of three core parts: events, providers, and the main analytics dispatcher.  
 
-## Events
+[Providers](./Documentation/Providers.md) receive events from the dispatcher and report them to a specific analytics system.  They may filter which events they report and transform the data in a particular way.
 
-Metova Analytics comes with a base `AnalyticsEvent` class, and while you can construct instances of this class, attempting to use this class without subclassing and overriding its `name` property will result in your application crashing.  Most importantly, the base class provides a default implementation for its `metadata` property.  This property comes pre-populated with a lot of information you may want to know about your user, their device, and some of their OS-level settings.  This can be convenient if you are using an analytics system that does not gather all of this information for you.  However it can be noisey in the case that your system does collect all of this information for you.  For more information, see [MetaData Keys](../TODO.md).
+[Events](./Documentation/Events.md) capture any analytic information you need to capture at the time of the event and carry that information forward, through the analytics dispatcher to the registered providers, so that they may appropriately report them into your analytics systems.
 
-If you wanted to track user logins, you might create an `AnalyticsEvent` subclass that looks something like this:
+[The analytics dispatcher](./Documentation/Analytics.md) simply handles making sure all events get to all registered providers.
 
-```swift
-class LogInEvent: AnalyticsEvent {
-    
-    let userName: String
-    
-    init(userName: String) {
-        self.userName = userName
-        super.init()
-    }
-
-    override name: String { 
-        return "login"
-    }
-
-    override metadata: [String: Any] {
-        return super.metadata.merging(["username":username]) { (_, new) in new }
-    }
-
-}
-```
-
-This implementation would keep the information Metova Analytics collects for you about the user's device, OS, etc.  If you don't want that information, you can instead change your `metadata` implementation to something like this:
-
-```swift
-override metadata: [String: Any] {
-    return ["username":username]
-}
-```
-
-Using this event is then as simple as the above example:
-
-```swift
-// On successful login:
-Analytics.send(event: LogInEvent(username: username))
-```
-
-## Providers
-
-TODO 🙁😞😢😭
+For further information, please see [the documentation](./Documentation).
 
 # Credits
 
