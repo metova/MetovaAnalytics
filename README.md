@@ -16,7 +16,6 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#Usage)
-    - [Documentation](./Documentation)
 - [Credits](#credits)
 - [License](#license)
 
@@ -77,11 +76,9 @@ Analytics.send(event: someEvent)
 
 Metova Analytics is comprised of three core parts: events, providers, and the main analytics dispatcher.  
 
-[Providers](./Documentation/Providers.md) receive events from the dispatcher and report them to a specific analytics system.  They may filter which events they report and transform the data in a particular way.
-
-[Events](./Documentation/Events.md) capture any analytic information you need to capture at the time of the event and carry that information forward, through the analytics dispatcher to the registered providers, so that they may appropriately report them into your analytics systems.
-
-[The analytics dispatcher](./Documentation/Analytics.md) simply handles making sure all events get to all registered providers.
+ - [Providers](./Documentation/Providers.md) receive events from the dispatcher and report them to a specific analytics system.  They may filter which events they report and transform the data in a particular way.
+ - [Events](./Documentation/Events.md) capture any analytic information you need to capture at the time of the event and carry that information forward, through the analytics dispatcher to the registered providers, so that they may appropriately report them into your analytics systems.
+ - [The analytics dispatcher](./Documentation/Analytics.md) simply handles making sure all events get to all registered providers.
 
 For further information, please see [the documentation](./Documentation).
 
