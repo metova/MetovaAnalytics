@@ -31,7 +31,9 @@ A more sophisticated implementation may only want to report certain types events
 import Crashlytics
 import Fabric
 
-protocol NonFatalErrorEvent {}
+protocol NonFatalErrorEvent {
+    var error: Error { get }
+}
 
 class CrashlyticsAnalyticsProvider: AnalyticsProvider {
     
