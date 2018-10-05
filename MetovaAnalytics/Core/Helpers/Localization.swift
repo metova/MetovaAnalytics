@@ -29,6 +29,24 @@
 
 import Foundation
 
+extension AnalyticsEvent {
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to the user's localization preferences
+    public struct PreferredLocalization {
+        private init() {}
+        
+        private static let prefix = "\(MetadataKey.prefix).pl"
+        
+        /// The country code of the user's preferred localization
+        public static let countryCode = "\(prefix).countryCode"
+        /// The language code of the user's preferred localization
+        public static let languageCode = "\(prefix).languageCode"
+        /// The canonical language id of the user's preferred localization
+        public static let canonicalLanguageId = "\(prefix).canonicalLangId"
+        /// The display name of the user's preferred localization
+        public static let languageDisplayName = "\(prefix).langDisplayName"
+    }
+}
+
 extension NSLocale {
     
     internal static var analyticsInfo: [String: String] {

@@ -37,17 +37,6 @@ open class AnalyticsEvent {
         private init() {}
         
         internal static let prefix = "metova"
-
-        public struct PreferredLocalization {
-            private init() {}
-            
-            private static let prefix = "\(MetadataKey.prefix).pl"
-            
-            public static let countryCode = "\(prefix).countryCode"
-            public static let languageCode = "\(prefix).languageCode"
-            public static let canonicalLanguageId = "\(prefix).canonicalLangId"
-            public static let languageDisplayName = "\(prefix).langDisplayName"
-        }
         
         public struct DeviceInfo {
             private init() {}
