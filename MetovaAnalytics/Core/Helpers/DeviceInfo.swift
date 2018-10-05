@@ -29,6 +29,24 @@
 
 import UIKit.UIDevice
 
+extension AnalyticsEvent {
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to
+    public struct DeviceInfo {
+        private init() {}
+        
+        private static let prefix = "\(MetadataKey.prefix).di"
+        
+        /// The name of the operating system installed on the device
+        public static let osName = "\(prefix).OSName"
+        /// The version of the operating system installed on the device
+        public static let osVersion = "\(prefix).OSVersion"
+        /// The idiomatic model name of the device
+        public static let deviceModel = "\(prefix).deviceModel"
+        /// The public, common name of the device
+        public static let deviceName = "\(prefix).deviceName"
+    }
+}
+
 private var deviceModelName: String = {
     // StackOverflow: https://stackoverflow.com/a/11197770/2792531
     var systemInfo = utsname()

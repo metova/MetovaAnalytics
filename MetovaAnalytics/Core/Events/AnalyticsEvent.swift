@@ -37,17 +37,6 @@ open class AnalyticsEvent {
         private init() {}
         
         internal static let prefix = "metova"
-        
-        public struct DeviceInfo {
-            private init() {}
-            
-            private static let prefix = "\(MetadataKey.prefix).di"
-            
-            public static let osName = "\(prefix).OSName"
-            public static let osVersion = "\(prefix).OSVersion"
-            public static let deviceModel = "\(prefix).deviceModel"
-            public static let deviceName = "\(prefix).deviceName"
-        }
     }
     
     // MARK: Open Properties
