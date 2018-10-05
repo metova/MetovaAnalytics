@@ -51,7 +51,7 @@ extension UIDevice {
         return [
             AnalyticsEvent.MetadataKey.DeviceState.orientation: orientationDescription,
             AnalyticsEvent.MetadataKey.DeviceState.batteryState: batteryStateDescription,
-            AnalyticsEvent.MetadataKey.DeviceState.batteryState: batteryLevelDescription,
+            AnalyticsEvent.MetadataKey.DeviceState.batteryLevel: batteryLevelDescription,
         ]
     }
     

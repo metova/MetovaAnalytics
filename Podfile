@@ -6,4 +6,8 @@ target 'MetovaAnalytics' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Firebase/Core'
+  
+  target 'MetovaAnalyticsTests' do
+    inherit! :search_paths
+  end
 end

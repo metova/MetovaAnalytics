@@ -29,12 +29,12 @@
 
 import UIKit.UIDevice
 
-extension AnalyticsEvent {
+extension AnalyticsEvent.MetadataKey {
     /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to
     public struct DeviceInfo {
         private init() {}
         
-        private static let prefix = "\(MetadataKey.prefix).di"
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).di"
         
         /// The name of the operating system installed on the device
         public static let osName = "\(prefix).OSName"
@@ -64,10 +64,10 @@ extension UIDevice {
     internal static var analyticsInfo: [String: String] {
         
         return [
-            "DeviceInfo_OS_Name": self.current.systemName,
-            "DeviceInfo_OS_Version": self.current.systemVersion,
-            "DeviceInfo_Device_Model": self.modelName,
-            "DeviceInfo_Device_Name": self.deviceName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.osName: self.current.systemName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.osVersion: self.current.systemVersion,
+            AnalyticsEvent.MetadataKey.DeviceInfo.deviceModel: self.modelName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.deviceName: self.deviceName,
         ]
     }
     

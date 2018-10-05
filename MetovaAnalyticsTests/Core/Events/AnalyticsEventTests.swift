@@ -34,16 +34,16 @@ class AnalyticsEventTests: XCTestCase {
     func testMetadata() {
         
         let expectedKeys: [String] = [
-            "DeviceInfo_Device_Model",
-            "DeviceInfo_Device_Name",
-            "DeviceInfo_OS_Name",
-            "DeviceInfo_OS_Version",
-            "DeviceState_BatteryLevel",
-            "DeviceState_BatteryState",
-            "DeviceState_Orientation",
-            "LocalePref_CanonicalLanguageId",
-            "LocalePref_LanguageDisplayName",
-            "LocalePref_LanguageCode",
+            AnalyticsEvent.MetadataKey.DeviceInfo.deviceModel,
+            AnalyticsEvent.MetadataKey.DeviceInfo.deviceName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.osName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.osVersion,
+            AnalyticsEvent.MetadataKey.DeviceState.batteryLevel,
+            AnalyticsEvent.MetadataKey.DeviceState.batteryState,
+            AnalyticsEvent.MetadataKey.DeviceState.orientation,
+            AnalyticsEvent.MetadataKey.PreferredLocalization.canonicalLanguageId,
+            AnalyticsEvent.MetadataKey.PreferredLocalization.languageDisplayName,
+            AnalyticsEvent.MetadataKey.PreferredLocalization.languageCode,
         ]
         
         let actualMetadataKeys = MockEvent().metadata.keys

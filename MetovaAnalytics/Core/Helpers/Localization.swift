@@ -29,12 +29,12 @@
 
 import Foundation
 
-extension AnalyticsEvent {
+extension AnalyticsEvent.MetadataKey {
     /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to the user's localization preferences
     public struct PreferredLocalization {
         private init() {}
         
-        private static let prefix = "\(MetadataKey.prefix).pl"
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).pl"
         
         /// The country code of the user's preferred localization
         public static let countryCode = "\(prefix).countryCode"
@@ -60,13 +60,13 @@ extension NSLocale {
         let components = NSLocale.components(fromLocaleIdentifier: localeIdentifier)
         
         if let countryCode = components[NSLocale.Key.countryCode.rawValue] {
-            localizationDictionary["LocalePref_CountryCode"] = countryCode
+            localizationDictionary[AnalyticsEvent.MetadataKey.PreferredLocalization.countryCode] = countryCode
         }
         
         if let languageCode = components[NSLocale.Key.languageCode.rawValue] {
-            localizationDictionary["LocalePref_LanguageCode"] = languageCode
-            localizationDictionary["LocalePref_CanonicalLanguageId"] = NSLocale.canonicalLanguageIdentifier(from: languageCode)
-            localizationDictionary["LocalePref_LanguageDisplayName"] = NSLocale(localeIdentifier: localeIdentifier).displayName(forKey: .identifier, value: languageCode)
+            localizationDictionary[AnalyticsEvent.MetadataKey.PreferredLocalization.languageCode] = languageCode
+            localizationDictionary[AnalyticsEvent.MetadataKey.PreferredLocalization.canonicalLanguageId] = NSLocale.canonicalLanguageIdentifier(from: languageCode)
+            localizationDictionary[AnalyticsEvent.MetadataKey.PreferredLocalization.languageDisplayName] = NSLocale(localeIdentifier: localeIdentifier).displayName(forKey: .identifier, value: languageCode)
         }
         
         return localizationDictionary

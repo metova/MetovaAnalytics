@@ -24,6 +24,7 @@
 		4A60E1ED21061827002C47EC /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1EC21061827002C47EC /* AppInfo.swift */; };
 		4A60E1EF21061884002C47EC /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1EE21061884002C47EC /* Localization.swift */; };
 		4A60E1F1210619BC002C47EC /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1F0210619BC002C47EC /* DeviceInfo.swift */; };
+		690F4EE996A6A3279EE2C07A /* Pods_MetovaAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDE0C944D838FE133E1F59F /* Pods_MetovaAnalyticsTests.framework */; };
 		B4157292210A3D4B0096FC74 /* ProviderKey+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4157291210A3D4B0096FC74 /* ProviderKey+Hashable.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonFatalErrorEvent.swift; sourceTree = "<group>"; };
 		11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
 		11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsAnalyticsProvider.swift; sourceTree = "<group>"; };
+		2CDE0C944D838FE133E1F59F /* Pods_MetovaAnalyticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetovaAnalyticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBAD8F00C87DFF7518C1D5E /* Pods-MetovaAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalytics/Pods-MetovaAnalytics.release.xcconfig"; sourceTree = "<group>"; };
 		4A13DDD3216676B7006D5753 /* Events.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Events.md; sourceTree = "<group>"; };
 		4A13DDD4216676C4006D5753 /* Metadata.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Metadata.md; sourceTree = "<group>"; };
@@ -69,7 +71,9 @@
 		4A60E1F821061C0C002C47EC /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		82841BD7A63D61A1D946F403 /* Pods_MetovaAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetovaAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8858FE33D57A13D4685FE619 /* Pods-MetovaAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalytics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalytics/Pods-MetovaAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
+		AE1EA564695103608BBC493B /* Pods-MetovaAnalyticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalyticsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4157291210A3D4B0096FC74 /* ProviderKey+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProviderKey+Hashable.swift"; sourceTree = "<group>"; };
+		B93F573587F8868D622DD1C4 /* Pods-MetovaAnalyticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalyticsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A60E1CD2106149F002C47EC /* MetovaAnalytics.framework in Frameworks */,
+				690F4EE996A6A3279EE2C07A /* Pods_MetovaAnalyticsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				82841BD7A63D61A1D946F403 /* Pods_MetovaAnalytics.framework */,
+				2CDE0C944D838FE133E1F59F /* Pods_MetovaAnalyticsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			children = (
 				8858FE33D57A13D4685FE619 /* Pods-MetovaAnalytics.debug.xcconfig */,
 				3CBAD8F00C87DFF7518C1D5E /* Pods-MetovaAnalytics.release.xcconfig */,
+				B93F573587F8868D622DD1C4 /* Pods-MetovaAnalyticsTests.debug.xcconfig */,
+				AE1EA564695103608BBC493B /* Pods-MetovaAnalyticsTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -297,9 +305,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A60E1DA2106149F002C47EC /* Build configuration list for PBXNativeTarget "MetovaAnalyticsTests" */;
 			buildPhases = (
+				1588EE13F6993719882A0032 /* [CP] Check Pods Manifest.lock */,
 				4A60E1C82106149F002C47EC /* Sources */,
 				4A60E1C92106149F002C47EC /* Frameworks */,
 				4A60E1CA2106149F002C47EC /* Resources */,
+				091141A0364F966976CFC194 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -366,6 +376,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		091141A0364F966976CFC194 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1588EE13F6993719882A0032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MetovaAnalyticsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4A3FFC5B215EB036002B7807 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -642,6 +698,7 @@
 		};
 		4A60E1DB2106149F002C47EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B93F573587F8868D622DD1C4 /* Pods-MetovaAnalyticsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -661,6 +718,7 @@
 		};
 		4A60E1DC2106149F002C47EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE1EA564695103608BBC493B /* Pods-MetovaAnalyticsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -29,12 +29,12 @@
 
 import Foundation
 
-extension AnalyticsEvent {
+extension AnalyticsEvent.MetadataKey {
     /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to the application
     public struct ApplicationInfo {
         private init() {}
         
-        private static let prefix = "\(MetadataKey.prefix).ai"
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).ai"
         
         /// The bundle id of the application, equivalent to the Info.plist value for key `CFBundleIdentifier`
         public static let bundleId = "\(prefix).bundleId"
@@ -62,27 +62,27 @@ extension Bundle {
         }
         
         if let bundleId = info["CFBundleIdentifier"] as? String {
-            appInfo[AnalyticsEvent.ApplicationInfo.bundleId] = bundleId
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.bundleId] = bundleId
         }
         
         if let executableName = info["CFBundleExecutable"] as? String {
-            appInfo[AnalyticsEvent.ApplicationInfo.executableName] = executableName
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.executableName] = executableName
         }
         
         if let displayName = info["CFBundleName"] as? String {
-            appInfo[AnalyticsEvent.ApplicationInfo.displayName] = displayName
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.displayName] = displayName
         }
         
         if let appVersion = info["CFBundleShortVersionString"] as? String {
-            appInfo[AnalyticsEvent.ApplicationInfo.appVersion] = appVersion
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.appVersion] = appVersion
         }
         
         if let buildNumber = info["CFBundleVersion"] as? String {
-            appInfo[AnalyticsEvent.ApplicationInfo.buildNumber] = buildNumber
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.buildNumber] = buildNumber
         }
         
         if let minimumOSVersion = info["MinimumOSVersion"] as? String {
-            appInfo[AnalyticsEvent.ApplicationInfo.minimumOSVersion] = minimumOSVersion
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.minimumOSVersion] = minimumOSVersion
         }
         
         return appInfo
