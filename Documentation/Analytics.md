@@ -43,3 +43,14 @@ Analytics.register(provider: MockProvider() for: "Mock")
 Analytics.removeProvider(for: "Mock")
 ```
 
+## Sending Events
+
+As discussed in the top level documentation, sending an event is as simple as constructing it and passing it in:
+
+```swift
+let event = FooEvent(with: parameters)
+Analytics.send(event: event)
+```
+
+The analytics dispatcher makes sure all registered providers hear about this event and give them an opportunity send this event up to their corresponding analytics APIs.  
+
