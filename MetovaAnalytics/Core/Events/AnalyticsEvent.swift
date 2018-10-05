@@ -37,20 +37,7 @@ open class AnalyticsEvent {
         private init() {}
         
         internal static let prefix = "metova"
-        
-        public struct ApplicationInfo {
-            private init() {}
-            
-            private static let prefix = "\(MetadataKey.prefix).ai"
-            
-            public static let bundleId = "\(prefix).bundleId"
-            public static let executableName = "\(prefix).exeName"
-            public static let displayName = "\(prefix).displayName"
-            public static let appVersion = "\(prefix).appVersion"
-            public static let buildNumber = "\(prefix).buildNumber"
-            public static let minimumOSVersion = "\(prefix).minOS"
-        }
-        
+
         public struct PreferredLocalization {
             private init() {}
             
