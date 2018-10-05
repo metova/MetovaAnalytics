@@ -15,7 +15,7 @@ Once you've created a provider (see [Providers](./Providers.md)), you have two o
 
 [`register(provider:)`](../MetovaAnalytics/Core/Provider/MetovaAnalytics.swift#L84-91)
 
-Using this method registers a provider based on its type. This is the recommended method for registering providers, for simplicity sake. Attempting to register an additional provider of the same type will remove any provider of the same type you had implicitly registered.  If you need to register multiple providers of the same type, see [explicit registration](#ExplicitRegistration).
+Using this method registers a provider based on its type. This is the recommended method for registering providers, for simplicity sake. Attempting to register an additional provider of the same type will remove any provider of the same type you had implicitly registered.  If you need to register multiple providers of the same type, see [explicit registration](#explicit-registration).
 
 In order to remove a provider registered implicitly based on type, use [`remove<Provider: AnalyticsProvider>(for type: ProviderType)`](../MetovaAnalytics/Core/Provider/MetovaAnalytics.swift#L93-100).
 
