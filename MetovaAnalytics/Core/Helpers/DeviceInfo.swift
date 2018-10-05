@@ -36,14 +36,14 @@ extension AnalyticsEvent.MetadataKey {
         
         private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).di"
         
-        /// The name of the operating system installed on the device
-        public static let osName = "\(prefix).OSName"
-        /// The version of the operating system installed on the device
-        public static let osVersion = "\(prefix).OSVersion"
         /// The idiomatic model name of the device
         public static let deviceModel = "\(prefix).deviceModel"
         /// The public, common name of the device
         public static let deviceName = "\(prefix).deviceName"
+        /// The name of the operating system installed on the device
+        public static let osName = "\(prefix).OSName"
+        /// The version of the operating system installed on the device
+        public static let osVersion = "\(prefix).OSVersion"
     }
 }
 

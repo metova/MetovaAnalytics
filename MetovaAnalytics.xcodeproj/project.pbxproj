@@ -224,10 +224,10 @@
 		4A60E1E921061663002C47EC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4A60E1EA210616A7002C47EC /* DeviceState.swift */,
 				4A60E1EC21061827002C47EC /* AppInfo.swift */,
-				4A60E1EE21061884002C47EC /* Localization.swift */,
 				4A60E1F0210619BC002C47EC /* DeviceInfo.swift */,
+				4A60E1EA210616A7002C47EC /* DeviceState.swift */,
+				4A60E1EE21061884002C47EC /* Localization.swift */,
 				B4157291210A3D4B0096FC74 /* ProviderKey+Hashable.swift */,
 			);
 			path = Helpers;
