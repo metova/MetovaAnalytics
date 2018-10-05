@@ -17,6 +17,15 @@ These keys contain information about your application's metadata.
 * `AnalyticsEvent.MetadataKey.ApplicationInfo.buildNumber`: The internal build number of the application, equivalent to the Info.plist value for key `CFBundleVersion`.
 * `AnalyticsEvent.MetadataKey.ApplicationInfo.minimumOSVersion`: The minimum supported version of iOS for the application, equivalent to the Info.plist value for key `MinimumOSVersion`.
 
+### Device Info
+
+These keys contain information about the user's device.
+
+* `AnalyticsEvent.MetadataKey.DeviceInfo.deviceModel`: The idiomatic Apple model name for the device.
+* `AnalyticsEvent.MetadataKey.DeviceInfo.deviceName`: The common name of the device.
+* `AnalyticsEvent.MetadataKey.DeviceInfo.osName`: The name of the operating system installed on the device.
+* `AnalyticsEvent.MetadataKey.DeviceInfo.osVersion`: The version of the operating system installed on the device.
+
 ### Device State
 
 These keys contain information about the current state of the user's device.
@@ -33,15 +42,6 @@ These keys contain information about the current state of the user's device.
     * `"plugged in, at 100%"`
     * `"unknown"`
 * `AnalyticsEvent.MetadataKey.DeviceState.batteryLevel`: Charge level of the battery at the time the event is created, represented as a floating-point value between 0 (fully depleted) and 1 (fully charged). 
-
-### Device Info
-
-These keys contain information about the user's device.
-
-* `AnalyticsEvent.MetadataKey.DeviceInfo.deviceModel`: The idiomatic Apple model name for the device.
-* `AnalyticsEvent.MetadataKey.DeviceInfo.deviceName`: The common name of the device.
-* `AnalyticsEvent.MetadataKey.DeviceInfo.osName`: The name of the operating system installed on the device.
-* `AnalyticsEvent.MetadataKey.DeviceInfo.osVersion`: The version of the operating system installed on the device.
 
 ### Preferred Localization
 
