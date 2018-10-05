@@ -32,6 +32,57 @@ import Foundation
 /// An abstract base class, from which custom events should inherit.
 open class AnalyticsEvent {
     
+    public struct MetadataKey {
+        private init() {}
+        
+        internal static let prefix = "metova"
+        
+        public struct DeviceState {
+            private init() {}
+            
+            private static let prefix = "\(MetadataKey.prefix).ds"
+            
+            public static let orientation = "\(prefix).orientation"
+            public static let batteryState = "\(prefix).batteryState"
+            public static let batteryLevel = "\(prefix).batteryLevel"
+        }
+        
+        public struct ApplicationInfo {
+            private init() {}
+            
+            private static let prefix = "\(MetadataKey.prefix).ai"
+            
+            public static let bundleId = "\(prefix).bundleId"
+            public static let executableName = "\(prefix).exeName"
+            public static let displayName = "\(prefix).displayName"
+            public static let appVersion = "\(prefix).appVersion"
+            public static let buildNumber = "\(prefix).buildNumber"
+            public static let minimumOSVersion = "\(prefix).minOS"
+        }
+        
+        public struct PreferredLocalization {
+            private init() {}
+            
+            private static let prefix = "\(MetadataKey.prefix).pl"
+            
+            public static let countryCode = "\(prefix).countryCode"
+            public static let languageCode = "\(prefix).languageCode"
+            public static let canonicalLanguageId = "\(prefix).canonicalLangId"
+            public static let languageDisplayName = "\(prefix).langDisplayName"
+        }
+        
+        public struct DeviceInfo {
+            private init() {}
+            
+            private static let prefix = "\(MetadataKey.prefix).di"
+            
+            public static let osName = "\(prefix).OSName"
+            public static let osVersion = "\(prefix).OSVersion"
+            public static let deviceModel = "\(prefix).deviceModel"
+            public static let deviceName = "\(prefix).deviceName"
+        }
+    }
+    
     // MARK: Open Properties
     
     /// The name of the event.  This property should always be overridden by subclasses.
