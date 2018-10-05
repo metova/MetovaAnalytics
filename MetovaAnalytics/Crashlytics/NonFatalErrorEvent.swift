@@ -40,12 +40,10 @@ public class NonFatalErrorEvent: AnalyticsEvent {
         super.init()
     }
     
-    
     /// The name of the non-fatal error event.
     public override var name: String {
         return "Non-Fatal Error"
     }
-    
     
     /// The metadata to include with this event when reporting to Analytics.
     public override var metadata: [String: Any] {

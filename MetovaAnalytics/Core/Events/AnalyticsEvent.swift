@@ -32,20 +32,11 @@ import Foundation
 /// An abstract base class, from which custom events should inherit.
 open class AnalyticsEvent {
     
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class
     public struct MetadataKey {
         private init() {}
         
         internal static let prefix = "metova"
-        
-        public struct DeviceState {
-            private init() {}
-            
-            private static let prefix = "\(MetadataKey.prefix).ds"
-            
-            public static let orientation = "\(prefix).orientation"
-            public static let batteryState = "\(prefix).batteryState"
-            public static let batteryLevel = "\(prefix).batteryLevel"
-        }
         
         public struct ApplicationInfo {
             private init() {}
@@ -109,14 +100,7 @@ open class AnalyticsEvent {
     
     // MARK: Private Properties
 
-    private var deviceState: [String: String] {
-        
-        return [
-            "DeviceState_Orientation": UIDevice.current.orientationDescription,
-            "DeviceState_BatteryState": UIDevice.current.batteryStateDescription,
-            "DeviceState_BatteryLevel": UIDevice.current.batteryLevelDescription,
-        ]
-    }
+    private var deviceState: [String: String] { return UIDevice.current.analyticsInfo }
     
     private lazy var applicationInformation: [String: String] = Bundle.main.analyticsAppInfo
     
