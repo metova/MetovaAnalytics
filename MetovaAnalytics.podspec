@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'MetovaAnalytics'
-  s.version      = '0.3.0'
+  s.version      = '1.0.0'
   s.summary      = 'MetovaAnalytics is an analytics scaffolding framework.'
 
   s.homepage = 'http://metova.com'
