@@ -1,4 +1,4 @@
-[![MetovaAnalytics](https://github.com/metova/MetovaAnalytics/blob/master/Assets/MetovaAnalytics.png?raw=true)](https://cocoapods.org/pods/MetovaAnalytics)
+# [Metova Analytics](https://cocoapods.org/pods/MetovaAnalytics)
 
 <p align="center">
  <a href="https://travis-ci.org/metova/MetovaAnalytics" target="_blank"><img src="https://travis-ci.org/metova/MetovaAnalytics.svg?branch=master" alt="Build Status"></a>
