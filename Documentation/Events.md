@@ -21,7 +21,7 @@ class LogInEvent: AnalyticsEvent {
     }
 
     override metadata: [String: Any] {
-        return super.metadata.merging(["username":username]) { (_, new) in new }
+        return super.metadata.merging(["username": username]) { (_, new) in new }
     }
 
 }
