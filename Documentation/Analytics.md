@@ -24,7 +24,7 @@ In order to remove a provider registered implicitly based on type, use [`remove<
 Analytics.register(provider: FooProvider())
 
 // Remove
-Analytics.remove(for FooProvider.self)
+Analytics.remove(for: FooProvider.self)
 ```
 
 ### Explicit Registration
