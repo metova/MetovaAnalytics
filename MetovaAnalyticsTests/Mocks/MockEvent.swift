@@ -1,8 +1,7 @@
 //
-//  MetovaAnalytics.swift
-//  MetovaAnalytics
+// MockEvent.swift
 //
-//  Created by Nick Griffith on 7/19/18
+// Created by Nick Griffith on 9/28/18
 //  Copyright © 2018 Metova. All rights reserved.
 //
 //  MIT License
@@ -27,9 +26,8 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-import Foundation
+import MetovaAnalytics
 
-public protocol AnalyticsProvider {
-    
-    func send(event: AnalyticsEvent)
+class MockEvent: AnalyticsEvent {
+    override var name: String { return "MockEvent" }
 }

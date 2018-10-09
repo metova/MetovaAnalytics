@@ -29,42 +29,11 @@
 
 import Foundation
 
-open class AnalyticsEvent {
+/// In order to hear about events, an object must implement the AnalyticsProvider protocol.
+public protocol AnalyticsProvider {
     
-    // MARK: Open Properties
-    
-    open var name: String {
-        
-        fatalError("AnalyticsEvent is an abstract class. Name must be provided by a subclass.")
-    }
-    
-    open var metadata: [String: Any] {
-        
-        return [:]
-            .merging(deviceState) { (_, new) in new }
-            .merging(deviceInfo) { (_, new) in new }
-            .merging(preferredLocalization) { (_, new) in new }
-            .merging(applicationInformation) { (_, new) in new }
-    }
-    
-    // MARK: Initializers
-    
-    public init() {}
-    
-    // MARK: Private Properties
-
-    private var deviceState: [String: String] {
-        
-        return [
-            "DeviceState_Orientation": UIDevice.current.orientationDescription,
-            "DeviceState_BatteryState": UIDevice.current.batteryStateDescription,
-            "DeviceState_BatteryLevel": UIDevice.current.batteryLevelDescription,
-        ]
-    }
-    
-    private lazy var applicationInformation: [String: String] = Bundle.main.analyticsAppInfo
-    
-    private lazy var preferredLocalization: [String: String] = NSLocale.analyticsInfo
-
-    private lazy var deviceInfo: [String: String] = UIDevice.analyticsInfo
+    /// Tells the provider about an event that has been reported into the Analytics system.
+    ///
+    /// - Parameter event: The event to report
+    func send(event: AnalyticsEvent)
 }

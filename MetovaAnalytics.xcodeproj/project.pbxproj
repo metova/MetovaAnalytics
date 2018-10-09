@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11C8845A215EBAD000806790 /* NonFatalErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */; };
+		11C8845F215EC53A00806790 /* FirebaseAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */; };
+		11C88462215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */; };
 		3EDDDCA8FFB710FCCA595789 /* Pods_MetovaAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82841BD7A63D61A1D946F403 /* Pods_MetovaAnalytics.framework */; };
+		4A3FFC62215EB76C002B7807 /* AnalyticsEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */; };
+		4A3FFC64215EBA89002B7807 /* AnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */; };
+		4A3FFC67215EBABD002B7807 /* MockEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC66215EBABD002B7807 /* MockEvent.swift */; };
+		4A3FFC69215EBBF0002B7807 /* MockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FFC68215EBBF0002B7807 /* MockProvider.swift */; };
 		4A60E1CD2106149F002C47EC /* MetovaAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A60E1C32106149F002C47EC /* MetovaAnalytics.framework */; };
-		4A60E1D22106149F002C47EC /* MetovaAnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1D12106149F002C47EC /* MetovaAnalyticsTests.swift */; };
 		4A60E1D42106149F002C47EC /* MetovaAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A60E1C62106149F002C47EC /* MetovaAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A60E1E221061522002C47EC /* MetovaAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */; };
 		4A60E1E321061522002C47EC /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1DF21061522002C47EC /* AnalyticsEvent.swift */; };
@@ -18,6 +24,7 @@
 		4A60E1ED21061827002C47EC /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1EC21061827002C47EC /* AppInfo.swift */; };
 		4A60E1EF21061884002C47EC /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1EE21061884002C47EC /* Localization.swift */; };
 		4A60E1F1210619BC002C47EC /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60E1F0210619BC002C47EC /* DeviceInfo.swift */; };
+		690F4EE996A6A3279EE2C07A /* Pods_MetovaAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDE0C944D838FE133E1F59F /* Pods_MetovaAnalyticsTests.framework */; };
 		B4157292210A3D4B0096FC74 /* ProviderKey+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4157291210A3D4B0096FC74 /* ProviderKey+Hashable.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +39,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonFatalErrorEvent.swift; sourceTree = "<group>"; };
+		11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
+		11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashlyticsAnalyticsProvider.swift; sourceTree = "<group>"; };
+		2CDE0C944D838FE133E1F59F /* Pods_MetovaAnalyticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetovaAnalyticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBAD8F00C87DFF7518C1D5E /* Pods-MetovaAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalytics/Pods-MetovaAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+		4A13DDD3216676B7006D5753 /* Events.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Events.md; sourceTree = "<group>"; };
+		4A13DDD4216676C4006D5753 /* Metadata.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Metadata.md; sourceTree = "<group>"; };
+		4A13DDD5216676DE006D5753 /* Providers.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Providers.md; sourceTree = "<group>"; };
+		4A13DDD62166770A006D5753 /* Analytics.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Analytics.md; sourceTree = "<group>"; };
+		4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEventTests.swift; sourceTree = "<group>"; };
+		4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
+		4A3FFC66215EBABD002B7807 /* MockEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEvent.swift; sourceTree = "<group>"; };
+		4A3FFC68215EBBF0002B7807 /* MockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProvider.swift; sourceTree = "<group>"; };
 		4A60E1C32106149F002C47EC /* MetovaAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetovaAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A60E1C62106149F002C47EC /* MetovaAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetovaAnalytics.h; sourceTree = "<group>"; };
 		4A60E1C72106149F002C47EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MetovaAnalytics/Info.plist; sourceTree = "<group>"; };
 		4A60E1CC2106149F002C47EC /* MetovaAnalyticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetovaAnalyticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A60E1D12106149F002C47EC /* MetovaAnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetovaAnalyticsTests.swift; sourceTree = "<group>"; };
 		4A60E1D32106149F002C47EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetovaAnalytics.swift; sourceTree = "<group>"; };
 		4A60E1DF21061522002C47EC /* AnalyticsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
@@ -46,15 +64,16 @@
 		4A60E1EC21061827002C47EC /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		4A60E1EE21061884002C47EC /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		4A60E1F0210619BC002C47EC /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
-		4A60E1F321061C0C002C47EC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		4A60E1F421061C0C002C47EC /* MetovaAnalytics.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MetovaAnalytics.podspec; sourceTree = "<group>"; };
-		4A60E1F521061C0C002C47EC /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		4A60E1F321061C0C002C47EC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4A60E1F421061C0C002C47EC /* MetovaAnalytics.podspec */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = text; path = MetovaAnalytics.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		4A60E1F621061C0C002C47EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A60E1F721061C0C002C47EC /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		4A60E1F821061C0C002C47EC /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		82841BD7A63D61A1D946F403 /* Pods_MetovaAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetovaAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8858FE33D57A13D4685FE619 /* Pods-MetovaAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalytics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalytics/Pods-MetovaAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
+		AE1EA564695103608BBC493B /* Pods-MetovaAnalyticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalyticsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4157291210A3D4B0096FC74 /* ProviderKey+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProviderKey+Hashable.swift"; sourceTree = "<group>"; };
+		B93F573587F8868D622DD1C4 /* Pods-MetovaAnalyticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetovaAnalyticsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,18 +90,86 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A60E1CD2106149F002C47EC /* MetovaAnalytics.framework in Frameworks */,
+				690F4EE996A6A3279EE2C07A /* Pods_MetovaAnalyticsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C8845D215EC53A00806790 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				11C8845E215EC53A00806790 /* FirebaseAnalyticsProvider.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		11C88460215EC55D00806790 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				11C88458215EBAD000806790 /* NonFatalErrorEvent.swift */,
+				11C88461215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		4A3FFC5D215EB609002B7807 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4A3FFC63215EBA89002B7807 /* AnalyticsTests.swift */,
+				4A3FFC5F215EB74F002B7807 /* Events */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4A3FFC5F215EB74F002B7807 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				4A3FFC61215EB76C002B7807 /* AnalyticsEventTests.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		4A3FFC65215EBAAF002B7807 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				4A3FFC66215EBABD002B7807 /* MockEvent.swift */,
+				4A3FFC68215EBBF0002B7807 /* MockProvider.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		4A3FFCCC2162850B002B7807 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				4A13DDD62166770A006D5753 /* Analytics.md */,
+				4A13DDD3216676B7006D5753 /* Events.md */,
+				4A13DDD4216676C4006D5753 /* Metadata.md */,
+				4A13DDD5216676DE006D5753 /* Providers.md */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		4A4F8DEC215E95DE00E3461C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4A60E1C62106149F002C47EC /* MetovaAnalytics.h */,
+				4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */,
+				4A60E1E021061522002C47EC /* Provider */,
+				4A60E1DE21061522002C47EC /* Events */,
+				4A60E1E921061663002C47EC /* Helpers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		4A60E1B92106149F002C47EC = {
 			isa = PBXGroup;
 			children = (
 				4A60E1F221061BEE002C47EC /* Supporting Files */,
 				4A60E1C52106149F002C47EC /* MetovaAnalytics */,
 				4A60E1D02106149F002C47EC /* MetovaAnalyticsTests */,
+				4A3FFCCC2162850B002B7807 /* Documentation */,
 				4A60E1C42106149F002C47EC /* Products */,
 				8725D5EF893D15F7361A9645 /* Pods */,
 				72FC8F92FB4C0098ECA493F5 /* Frameworks */,
@@ -101,11 +188,9 @@
 		4A60E1C52106149F002C47EC /* MetovaAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				4A60E1C62106149F002C47EC /* MetovaAnalytics.h */,
-				4A60E1DD21061522002C47EC /* MetovaAnalytics.swift */,
-				4A60E1E021061522002C47EC /* Provider */,
-				4A60E1DE21061522002C47EC /* Events */,
-				4A60E1E921061663002C47EC /* Helpers */,
+				4A4F8DEC215E95DE00E3461C /* Core */,
+				11C88460215EC55D00806790 /* Crashlytics */,
+				11C8845D215EC53A00806790 /* Firebase */,
 			);
 			path = MetovaAnalytics;
 			sourceTree = "<group>";
@@ -113,7 +198,8 @@
 		4A60E1D02106149F002C47EC /* MetovaAnalyticsTests */ = {
 			isa = PBXGroup;
 			children = (
-				4A60E1D12106149F002C47EC /* MetovaAnalyticsTests.swift */,
+				4A3FFC65215EBAAF002B7807 /* Mocks */,
+				4A3FFC5D215EB609002B7807 /* Core */,
 				4A60E1D32106149F002C47EC /* Info.plist */,
 			);
 			path = MetovaAnalyticsTests;
@@ -138,10 +224,10 @@
 		4A60E1E921061663002C47EC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4A60E1EA210616A7002C47EC /* DeviceState.swift */,
 				4A60E1EC21061827002C47EC /* AppInfo.swift */,
-				4A60E1EE21061884002C47EC /* Localization.swift */,
 				4A60E1F0210619BC002C47EC /* DeviceInfo.swift */,
+				4A60E1EA210616A7002C47EC /* DeviceState.swift */,
+				4A60E1EE21061884002C47EC /* Localization.swift */,
 				B4157291210A3D4B0096FC74 /* ProviderKey+Hashable.swift */,
 			);
 			path = Helpers;
@@ -153,7 +239,6 @@
 				4A60E1F821061C0C002C47EC /* CHANGELOG.md */,
 				4A60E1F721061C0C002C47EC /* CONTRIBUTING.md */,
 				4A60E1F421061C0C002C47EC /* MetovaAnalytics.podspec */,
-				4A60E1F521061C0C002C47EC /* Package.swift */,
 				4A60E1F321061C0C002C47EC /* Podfile */,
 				4A60E1F621061C0C002C47EC /* README.md */,
 				4A60E1C72106149F002C47EC /* Info.plist */,
@@ -165,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				82841BD7A63D61A1D946F403 /* Pods_MetovaAnalytics.framework */,
+				2CDE0C944D838FE133E1F59F /* Pods_MetovaAnalyticsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,6 +260,8 @@
 			children = (
 				8858FE33D57A13D4685FE619 /* Pods-MetovaAnalytics.debug.xcconfig */,
 				3CBAD8F00C87DFF7518C1D5E /* Pods-MetovaAnalytics.release.xcconfig */,
+				B93F573587F8868D622DD1C4 /* Pods-MetovaAnalyticsTests.debug.xcconfig */,
+				AE1EA564695103608BBC493B /* Pods-MetovaAnalyticsTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -197,6 +285,8 @@
 			buildConfigurationList = 4A60E1D72106149F002C47EC /* Build configuration list for PBXNativeTarget "MetovaAnalytics" */;
 			buildPhases = (
 				B708751CFC7FA517E774289B /* [CP] Check Pods Manifest.lock */,
+				4A3FFC5C215EB053002B7807 /* TODO Warnings */,
+				4A3FFC5B215EB036002B7807 /* SwiftLint */,
 				4A60E1BE2106149F002C47EC /* Sources */,
 				4A60E1BF2106149F002C47EC /* Frameworks */,
 				4A60E1C02106149F002C47EC /* Headers */,
@@ -215,9 +305,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A60E1DA2106149F002C47EC /* Build configuration list for PBXNativeTarget "MetovaAnalyticsTests" */;
 			buildPhases = (
+				1588EE13F6993719882A0032 /* [CP] Check Pods Manifest.lock */,
 				4A60E1C82106149F002C47EC /* Sources */,
 				4A60E1C92106149F002C47EC /* Frameworks */,
 				4A60E1CA2106149F002C47EC /* Resources */,
+				091141A0364F966976CFC194 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +376,88 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		091141A0364F966976CFC194 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetovaAnalyticsTests/Pods-MetovaAnalyticsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1588EE13F6993719882A0032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MetovaAnalyticsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A3FFC5B215EB036002B7807 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		4A3FFC5C215EB053002B7807 /* TODO Warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "TODO Warnings";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nKEYWORDS=\"TODO:\"\nfind \"${SRCROOT}/MetovaTestKit\" \"${SRCROOT}/MetovaTestKitTests\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.mm\" -or -name \"*.swift\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\nfi\n";
+		};
 		B708751CFC7FA517E774289B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,14 +483,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C8845F215EC53A00806790 /* FirebaseAnalyticsProvider.swift in Sources */,
 				4A60E1F1210619BC002C47EC /* DeviceInfo.swift in Sources */,
 				4A60E1E221061522002C47EC /* MetovaAnalytics.swift in Sources */,
 				4A60E1ED21061827002C47EC /* AppInfo.swift in Sources */,
 				4A60E1EF21061884002C47EC /* Localization.swift in Sources */,
 				B4157292210A3D4B0096FC74 /* ProviderKey+Hashable.swift in Sources */,
 				4A60E1EB210616A7002C47EC /* DeviceState.swift in Sources */,
+				11C8845A215EBAD000806790 /* NonFatalErrorEvent.swift in Sources */,
 				4A60E1E321061522002C47EC /* AnalyticsEvent.swift in Sources */,
 				4A60E1E421061522002C47EC /* AnalyticsProvider.swift in Sources */,
+				11C88462215EC55D00806790 /* CrashlyticsAnalyticsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +501,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A60E1D22106149F002C47EC /* MetovaAnalyticsTests.swift in Sources */,
+				4A3FFC69215EBBF0002B7807 /* MockProvider.swift in Sources */,
+				4A3FFC64215EBA89002B7807 /* AnalyticsTests.swift in Sources */,
+				4A3FFC67215EBABD002B7807 /* MockEvent.swift in Sources */,
+				4A3FFC62215EB76C002B7807 /* AnalyticsEventTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +577,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -453,6 +634,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -482,7 +664,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -509,13 +691,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = metova.MetovaAnalytics;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		4A60E1DB2106149F002C47EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B93F573587F8868D622DD1C4 /* Pods-MetovaAnalyticsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,13 +711,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = metova.MetovaAnalyticsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		4A60E1DC2106149F002C47EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE1EA564695103608BBC493B /* Pods-MetovaAnalyticsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,7 +731,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = metova.MetovaAnalyticsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

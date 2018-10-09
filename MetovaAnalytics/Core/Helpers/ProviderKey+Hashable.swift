@@ -1,8 +1,8 @@
 //
-//  MetovaAnalytics.swift
+//  ProviderKey+Hashable.swift
 //  MetovaAnalytics
 //
-//  Created by Nick Griffith on 7/23/18
+//  Created by Chris Martin on 7/26/18.
 //  Copyright © 2018 Metova. All rights reserved.
 //
 //  MIT License
@@ -29,40 +29,31 @@
 
 import Foundation
 
-extension Bundle {
+// MARK: - Hashable
 
-    internal var analyticsAppInfo: [String: String] {
+#if !swift(>=4.1)
+extension Analytics.ProviderKey {
+    
+    public var hashValue: Int {
         
-        var appInfo = [String: String]()
-        
-        guard let info = Bundle.main.infoDictionary else {
-            return appInfo
+        switch self {
+        case .explicit(let string):
+            return "explicit(\(string))".hashValue
+        case .inferred(let string):
+            return "inferred(\(string))".hashValue
         }
+    }
+    
+    public static func == (lhs: Analytics.ProviderKey, rhs: Analytics.ProviderKey) -> Bool {
         
-        if let bundleId = info["CFBundleIdentifier"] as? String {
-            appInfo["AppInfo_BundleId"] = bundleId
+        switch (lhs, rhs) {
+        case (.explicit(let lhs), .explicit(let rhs)):
+            return lhs == rhs
+        case (.inferred(let lhs), .inferred(let rhs)):
+            return lhs == rhs
+        default:
+            return false
         }
-        
-        if let executableName = info["CFBundleExecutable"] as? String {
-            appInfo["AppInfo_ExecutableName"] = executableName
-        }
-        
-        if let displayName = info["CFBundleName"] as? String {
-            appInfo["AppInfo_DisplayName"] = displayName
-        }
-        
-        if let appVersion = info["CFBundleShortVersionString"] as? String {
-            appInfo["AppInfo_Version"] = appVersion
-        }
-        
-        if let buildNumber = info["CFBundleVersion"] as? String {
-            appInfo["AppInfo_BuildNumber"] = buildNumber
-        }
-        
-        if let minimumOSVersion = info["MinimumOSVersion"] as? String {
-            appInfo["AppInfo_MinimumOSVersion"] = minimumOSVersion
-        }
-        
-        return appInfo
     }
 }
+#endif
