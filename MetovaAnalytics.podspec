@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     'Chris Dillard' => 'chris.dillard@metova.com'
   }
 
-  s.source = { :git => 'https://lab.metova.com/metova/analytics-ios.git', :tag => s.version.to_s }
+  s.source = { :git => 'https://github.com/metova/MetovaAnalytics.git', :tag => s.version.to_s }
 
   s.platform = :ios, '9.0'
   s.swift_version = '4.2'
