@@ -68,7 +68,7 @@ extension Analytics {
     /// - Parameters:
     ///   - provider: The provider to register
     ///   - key: The key to use to register the provider
-    public static func register(provider: AnalyticsProvider, for key: String) {
+    public static func register(provider: AnalyticsProvider, forKey key: String) {
         
         providers[.explicit(key)] = provider
     }
@@ -76,7 +76,7 @@ extension Analytics {
     /// Removes a provider registered under an explicit key.
     ///
     /// - Parameter key: The key of the provider to unregister
-    public static func removeProvider(for key: String) {
+    public static func removeProvider(withKey key: String) {
         
         providers[.explicit(key)] = nil
     }
@@ -93,7 +93,7 @@ extension Analytics {
     /// Removes a provider registered without an explicit key
     ///
     /// - Parameter type: The type of provider to remove
-    public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
+    public static func remove<Provider: AnalyticsProvider>(ofType type: Provider.Type) {
         
         let key = String(describing: type)
         providers[.inferred(key)] = nil
