@@ -39,8 +39,8 @@ class AnalyticsTests: XCTestCase {
             eventExpectation.fulfill()
         }
         
-        Analytics.register(provider: provider, for: "Mock")
-        defer { Analytics.removeProvider(for: "Mock") }
+        Analytics.register(provider: provider, forKey: "Mock")
+        defer { Analytics.removeProvider(withKey: "Mock") }
         
         Analytics.send(event: MockEvent())
         
