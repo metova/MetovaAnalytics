@@ -29,6 +29,24 @@
 
 import UIKit.UIDevice
 
+extension AnalyticsEvent.MetadataKey {
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to
+    public struct DeviceInfo {
+        private init() {}
+        
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).di"
+        
+        /// The idiomatic model name of the device
+        public static let deviceModel = "\(prefix).deviceModel"
+        /// The public, common name of the device
+        public static let deviceName = "\(prefix).deviceName"
+        /// The name of the operating system installed on the device
+        public static let osName = "\(prefix).OSName"
+        /// The version of the operating system installed on the device
+        public static let osVersion = "\(prefix).OSVersion"
+    }
+}
+
 private var deviceModelName: String = {
     // StackOverflow: https://stackoverflow.com/a/11197770/2792531
     var systemInfo = utsname()
@@ -44,19 +62,22 @@ private var deviceModelName: String = {
 extension UIDevice {
     
     internal static var analyticsInfo: [String: String] {
+        
         return [
-            "DeviceInfo_OS_Name": self.current.systemName,
-            "DeviceInfo_OS_Version": self.current.systemVersion,
-            "DeviceInfo_Device_Model": self.modelName,
-            "DeviceInfo_Device_Name": self.deviceName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.osName: self.current.systemName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.osVersion: self.current.systemVersion,
+            AnalyticsEvent.MetadataKey.DeviceInfo.deviceModel: self.modelName,
+            AnalyticsEvent.MetadataKey.DeviceInfo.deviceName: self.deviceName,
         ]
     }
     
     private static var modelName: String {
+        
         return deviceModelName
     }
     
     private static var deviceName: String {
+        
         switch modelName {
             
         // Device: Simulator
@@ -152,5 +173,4 @@ extension UIDevice {
             return "unknown"
         }
     }
-    
 }

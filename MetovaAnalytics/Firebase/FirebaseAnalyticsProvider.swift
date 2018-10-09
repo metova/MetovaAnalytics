@@ -1,6 +1,5 @@
 //
-//  MetovaAnalytics.swift
-//  MetovaAnalytics
+//  FirebaseAnalyticsProvider.swift
 //
 //  Created by Nick Griffith on 7/19/18
 //  Copyright © 2018 Metova. All rights reserved.
@@ -27,43 +26,37 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-public struct Analytics {
-    
-    private init() {}
-    
-    private static var providers: [ProviderKey: AnalyticsProvider] = [:]
-    
-    public static func send(event: AnalyticsEvent) {
-        for provider in providers.values {
-            provider.send(event: event)
-        }
-    }
-    
-}
+import Firebase
 
-// Providers
-extension Analytics {
+/// An analytics provider for Firebase.
+public class FirebaseAnalyticsProvider: AnalyticsProvider {
     
-    enum ProviderKey: Hashable {
-        case explicit(String)
-        case inferred(String)
+    /// Initialize the FirebaseAnalyticsProvider with default options and no name
+    public init() {
+        FirebaseApp.configure()
     }
     
-    public static func register(provider: AnalyticsProvider, for key: String) {
-        providers[.explicit(key)] = provider
+    /// Initialize the FirebaseAnalyticsProvider without a name.
+    ///
+    /// - Parameter options: The Firebase application options used to configure the services.
+    public init(options: FirebaseOptions) {
+        FirebaseApp.configure(options: options)
     }
     
-    public static func removeProvider(for key: String) {
-        providers[.explicit(key)] = nil
+    /// Initialize the FirebaseAnalyticsProvider with a name.
+    ///
+    /// - Parameters:
+    ///   - name: The application's name given by the developer. The name should should only contain Letters, Numbers and Underscores.
+    ///   - options: The Firebase application options used to configure the services.
+    public init(name: String, options: FirebaseOptions) {
+        FirebaseApp.configure(name: name, options: options)
     }
     
-    public static func register(provider: AnalyticsProvider) {
-        let key = String(describing: type(of: provider))
-        providers[.inferred(key)] = provider
-    }
-    
-    public static func remove<Provider: AnalyticsProvider>(for type: Provider.Type) {
-        providers[.inferred(String(describing: type))] = nil
+    /// Send an Analytics event to Firebase.
+    ///
+    /// - Parameter event: The analytics event to send to Firebase.
+    public func send(event: AnalyticsEvent) {
+        Firebase.Analytics.logEvent(event.name, parameters: event.metadata)
     }
     
 }

@@ -1,8 +1,7 @@
 //
-//  MetovaAnalytics.swift
-//  MetovaAnalytics
+//  NonFatalErrorEvent.swift
 //
-//  Created by Nick Griffith on 7/23/18
+//  Created by Nick Griffith on 9/19/18
 //  Copyright © 2018 Metova. All rights reserved.
 //
 //  MIT License
@@ -27,40 +26,28 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-import UIKit.UIDevice
-
-extension UIDevice {
+/// Non-fatal Error events can be used to track errors using your analytics provider
+public class NonFatalErrorEvent: AnalyticsEvent {
     
-    internal var orientationDescription: String {
-        switch UIDevice.current.orientation {
-        case .portrait, .portraitUpsideDown:
-            return "portrait"
-        case .landscapeLeft, .landscapeRight:
-            return "landscape"
-        case .faceUp:
-            return "face up"
-        case .faceDown:
-            return "face down"
-        case .unknown:
-            return "unknown"
-        }
+    /// The error object to be reported to analytics.
+    let error: Error
+    
+    /// Intializer for NonFatalErrorEvent
+    ///
+    /// - Parameter error: The error object to report to analytics.
+    public init(error: Error) {
+        self.error = error
+        super.init()
     }
     
-    internal var batteryStateDescription: String {
-        switch UIDevice.current.batteryState {
-        case .unplugged:
-            return "on battery, discharging"
-        case .charging:
-            return "plugged in, less than 100%"
-        case .full:
-            return "plugged in, at 100%"
-        case .unknown:
-            return "unknown"
-        }
+    /// The name of the non-fatal error event.
+    public override var name: String {
+        return "Non-Fatal Error"
     }
- 
-    internal var batteryLevelDescription: String {
-        return String(format: "%0.2f", UIDevice.current.batteryLevel)
+    
+    /// The metadata to include with this event when reporting to Analytics.
+    public override var metadata: [String: Any] {
+        return super.metadata.merging(["error": error.localizedDescription]) { (_, new) in new }
     }
     
 }

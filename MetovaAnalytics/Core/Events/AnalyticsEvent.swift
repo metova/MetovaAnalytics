@@ -29,41 +29,47 @@
 
 import Foundation
 
+/// An abstract base class, from which custom events should inherit.
 open class AnalyticsEvent {
     
-    public init() {}
-    
-    open var name: String {
-        fatalError("AnalyticsEvent is an abstract class.  Name must be provided by a subclass.")
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class
+    public struct MetadataKey {
+        private init() {}
+        
+        internal static let prefix = "metova"
     }
     
-    open var metadata: [String: String] {
+    // MARK: Open Properties
+    
+    /// The name of the event.  This property should always be overridden by subclasses.
+    open var name: String {
+        
+        fatalError("AnalyticsEvent is an abstract class. Name must be provided by a subclass.")
+    }
+    
+    /// The event's metadata.  This property can be optionally overridden.  It is highly recommended that the subclass merge it's new key-value pairs with its parent class's metadata.
+    /// `return super.metadata.merging(newKeyValues) { (_, new) in new }`
+    open var metadata: [String: Any] {
+        
         return [:]
             .merging(deviceState) { (_, new) in new }
             .merging(deviceInfo) { (_, new) in new }
             .merging(preferredLocalization) { (_, new) in new }
             .merging(applicationInformation) { (_, new) in new }
     }
-
-    private var deviceState: [String: String] {
-        return [
-            "DeviceState_Orientation": UIDevice.current.orientationDescription,
-            "DeviceState_BatteryState": UIDevice.current.batteryStateDescription,
-            "DeviceState_BatteryLevel": UIDevice.current.batteryLevelDescription,
-        ]
-    }
     
-    lazy private var applicationInformation: [String: String] = {
-        return Bundle.main.analyticsAppInfo
-    }()
+    // MARK: Initializers
     
-    lazy private var preferredLocalization: [String: String] = {
-        return NSLocale.analyticsInfo
-    }()
-
-    private lazy var deviceInfo: [String: String] = {
-        return UIDevice.analyticsInfo
-    }()
+    /// Constructs the Event.
+    public init() {}
     
+    // MARK: Private Properties
 
+    private var deviceState: [String: String] { return UIDevice.current.analyticsInfo }
+    
+    private lazy var applicationInformation: [String: String] = Bundle.main.analyticsAppInfo
+    
+    private lazy var preferredLocalization: [String: String] = NSLocale.analyticsInfo
+
+    private lazy var deviceInfo: [String: String] = UIDevice.analyticsInfo
 }
