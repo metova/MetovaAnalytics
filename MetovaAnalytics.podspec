@@ -31,32 +31,4 @@ Pod::Spec.new do |s|
       'MetovaAnalytics/Core/Exclude'
     ]
   end
-  
-  s.subspec 'Firebase' do |firebase|
-    firebase.dependency 'MetovaAnalytics/Core'
-    firebase.dependency 'Firebase'
-	
-    firebase.source_files = [
-      'MetovaAnalytics/Firebase',
-      'MetovaAnalytics/Firebase/**/*.{h,m,swift}'
-    ]
-    firebase.exclude_files = [
-      'MetovaAnalytics/Firebase/Exclude'
-    ]
-  end
-  
-  s.subspec 'Crashlytics' do |crashlytics|
-     crashlytics.dependency 'MetovaAnalytics/Core'
-     crashlytics.dependency 'Crashlytics'
-     crashlytics.dependency 'Firebase'
-
-    crashlytics.source_files = [
-      'MetovaAnalytics/Crashlytics',
-      'MetovaAnalytics/Crashlytics/**/*.{h,m,swift}'
-    ]
-    crashlytics.exclude_files = [
-      'MetovaAnalytics/Crashlytics/Exclude'
-    ]
-  end
-
 end
