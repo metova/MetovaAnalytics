@@ -3,7 +3,6 @@
 <p align="center">
  <a href="https://travis-ci.org/metova/MetovaAnalytics" target="_blank"><img src="https://travis-ci.org/metova/MetovaAnalytics.svg?branch=master" alt="Build Status"></a>
  <a href="https://cocoapods.org/pods/MetovaAnalytics" target="_blank"><img src="https://img.shields.io/cocoapods/v/MetovaAnalytics.svg" alt="CocoaPods Compatible"/></a>
- <a href="http://metova.github.io/MetovaAnalytics/" target="_blank"><img src="https://cdn.rawgit.com/metova/MetovaAnalytics/master/docs/badge.svg" alt="Documentation"/></a>
  <a href="https://coveralls.io/github/metova/MetovaAnalytics?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/metova/MetovaAnalytics/badge.svg?branch=master&dummy=no_cache_please_1" alt="Coverage Status"/></a>
  <a href="http://cocoadocs.org/docsets/MetovaAnalytics" target="_blank"><img src="https://img.shields.io/cocoapods/p/MetovaAnalytics.svg?style=flat" alt="Platform"/></a>
  <a href="http://twitter.com/metova" target="_blank"><img src="https://img.shields.io/badge/twitter-@Metova-3CAC84.svg" alt="Twitter"/></a>
@@ -15,31 +14,22 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 - [Requirements](#requirements)
 - [Communication](#communication)
 - [Installation](#installation)
-    - [CocoaPods](#cocoapods)
-    - [Swift Package Manager](#swift-package-manager)
-- [Usage](#usage)
-- [Documentation](#documentation)
+- [Usage](#Usage)
 - [Credits](#credits)
 - [License](#license)
-
------
 
 # Requirements
 
 - Swift 4.2
 - iOS 9+
 
------
-
 # Communication
 
-- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/alamofire). (Tag 'metova-pods')
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/metova-pods). (Tag 'metova-pods')
 - If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/metova-pods).
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
-
------
 
 # Installation
 
@@ -75,19 +65,21 @@ If you would like to test a beta version of MetovaAnalytics, you can install the
 pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', :branch => 'develop'
 ```
 
------
-
 # Usage
 
-TODO: Fill out the usage section with examples of using the code from the library.  This should include code snippets accompanied by plain English explanations.
+Metova Analytics makes reporting events to all of your analytics systems a simple one liner:
 
------
+```swift
+Analytics.send(event: someEvent)
+```
 
-# Documentation
+Metova Analytics is comprised of three core parts: events, providers, and the main analytics dispatcher.  
 
-Documentation can be found [here](http://metova.github.io/MetovaAnalytics/).
+ - [Providers](./Documentation/Providers.md) receive events from the dispatcher and report them to a specific analytics system.  They may filter which events they report and transform the data in a particular way.
+ - [Events](./Documentation/Events.md) capture any analytic information you need to capture at the time of the event and carry that information forward, through the analytics dispatcher to the registered providers, so that they may appropriately report them into your analytics systems.
+ - [The analytics dispatcher](./Documentation/Analytics.md) simply handles making sure all events get to all registered providers.
 
------
+For further information, please see [the documentation](./Documentation).
 
 # Credits
 
@@ -97,9 +89,7 @@ MetovaAnalytics is owned and maintained by [Metova Inc.](https://metova.com)
 
 If you would like to contribute to MetovaAnalytics, see our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
 
-
-
------
+This library was inspired by [Soroush Khanlou's nice article](http://khanlou.com/2017/12/misusing-subclassing/) about building an inheritance-based analytics system in Swift.  He included many fine suggestions, and we believe he is right.
 
 # License
 

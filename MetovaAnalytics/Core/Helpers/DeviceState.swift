@@ -29,9 +29,33 @@
 
 import UIKit.UIDevice
 
+extension AnalyticsEvent.MetadataKey {
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to the current state of the device
+    public struct DeviceState {
+        private init() {}
+        
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).ds"
+        
+        /// The orientation the current device is rotated to
+        public static let orientation = "\(prefix).orientation"
+        /// The current state of the battery
+        public static let batteryState = "\(prefix).batteryState"
+        /// The current charge level of the battery
+        public static let batteryLevel = "\(prefix).batteryLevel"
+    }
+}
+
 extension UIDevice {
     
-    internal var orientationDescription: String {
+    internal var analyticsInfo: [String: String] {
+        return [
+            AnalyticsEvent.MetadataKey.DeviceState.orientation: orientationDescription,
+            AnalyticsEvent.MetadataKey.DeviceState.batteryState: batteryStateDescription,
+            AnalyticsEvent.MetadataKey.DeviceState.batteryLevel: batteryLevelDescription,
+        ]
+    }
+    
+    private var orientationDescription: String {
         
         switch UIDevice.current.orientation {
         case .portrait, .portraitUpsideDown:
@@ -47,7 +71,7 @@ extension UIDevice {
         }
     }
     
-    internal var batteryStateDescription: String {
+    private var batteryStateDescription: String {
         
         switch UIDevice.current.batteryState {
         case .unplugged:
@@ -61,7 +85,7 @@ extension UIDevice {
         }
     }
  
-    internal var batteryLevelDescription: String {
+    private var batteryLevelDescription: String {
         
         return String(format: "%0.2f", UIDevice.current.batteryLevel)
     }

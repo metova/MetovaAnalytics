@@ -32,6 +32,13 @@ import Foundation
 /// An abstract base class, from which custom events should inherit.
 open class AnalyticsEvent {
     
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class
+    public struct MetadataKey {
+        private init() {}
+        
+        internal static let prefix = "metova"
+    }
+    
     // MARK: Open Properties
     
     /// The name of the event.  This property should always be overridden by subclasses.
@@ -58,14 +65,7 @@ open class AnalyticsEvent {
     
     // MARK: Private Properties
 
-    private var deviceState: [String: String] {
-        
-        return [
-            "DeviceState_Orientation": UIDevice.current.orientationDescription,
-            "DeviceState_BatteryState": UIDevice.current.batteryStateDescription,
-            "DeviceState_BatteryLevel": UIDevice.current.batteryLevelDescription,
-        ]
-    }
+    private var deviceState: [String: String] { return UIDevice.current.analyticsInfo }
     
     private lazy var applicationInformation: [String: String] = Bundle.main.analyticsAppInfo
     

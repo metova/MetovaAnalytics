@@ -7,7 +7,9 @@ Pod::Spec.new do |s|
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
   s.authors  = {
     'Metova, Inc.' => 'pods@metova.com',
-    'Nick Griffith' => 'nick.griffith@metova.com'
+    'Nick Griffith' => 'nick.griffith@metova.com',
+    'Chris Martin' => 'chris.martin@metova.com',
+    'Chris Dillard' => 'chris.dillard@metova.com'
   }
 
   s.source = { :git => 'https://lab.metova.com/metova/analytics-ios.git', :tag => s.version.to_s }
@@ -29,4 +31,32 @@ Pod::Spec.new do |s|
       'MetovaAnalytics/Core/Exclude'
     ]
   end
+  
+  s.subspec 'Firebase' do |firebase|
+    firebase.dependency 'MetovaAnalytics/Core'
+    firebase.dependency 'Firebase'
+	
+    firebase.source_files = [
+      'MetovaAnalytics/Firebase',
+      'MetovaAnalytics/Firebase/**/*.{h,m,swift}'
+    ]
+    firebase.exclude_files = [
+      'MetovaAnalytics/Firebase/Exclude'
+    ]
+  end
+  
+  s.subspec 'Crashlytics' do |crashlytics|
+     crashlytics.dependency 'MetovaAnalytics/Core'
+     crashlytics.dependency 'Crashlytics'
+     crashlytics.dependency 'Firebase'
+
+    crashlytics.source_files = [
+      'MetovaAnalytics/Crashlytics',
+      'MetovaAnalytics/Crashlytics/**/*.{h,m,swift}'
+    ]
+    crashlytics.exclude_files = [
+      'MetovaAnalytics/Crashlytics/Exclude'
+    ]
+  end
+
 end

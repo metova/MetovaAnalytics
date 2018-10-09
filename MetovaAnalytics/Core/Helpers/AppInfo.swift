@@ -29,6 +29,28 @@
 
 import Foundation
 
+extension AnalyticsEvent.MetadataKey {
+    /// Keys available for the default metadata provided by the base AnalyticsEvent class relating to the application
+    public struct ApplicationInfo {
+        private init() {}
+        
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).ai"
+        
+        /// The bundle id of the application, equivalent to the Info.plist value for key `CFBundleIdentifier`
+        public static let bundleId = "\(prefix).bundleId"
+        /// The executable name of the application, equivalent to the Info.plist value for key `CFBundleExecutable`
+        public static let executableName = "\(prefix).exeName"
+        /// The display name of the application, equivalent to the Info.plist value for the key `CFBundleName`
+        public static let displayName = "\(prefix).displayName"
+        /// The public version number of the application, equivalent to the Info.plist value for the key `CFBundleShortVersionString`
+        public static let appVersion = "\(prefix).appVersion"
+        /// The internal build number of the application, equivalent to the Info.plist value for the key `CFBundleVersion`
+        public static let buildNumber = "\(prefix).buildNumber"
+        /// The minimum supported version of iOS for the application, equivalent to the Info.plist value for the key `MinimumOSVersion`
+        public static let minimumOSVersion = "\(prefix).minOS"
+    }
+}
+
 extension Bundle {
 
     internal var analyticsAppInfo: [String: String] {
@@ -40,27 +62,27 @@ extension Bundle {
         }
         
         if let bundleId = info["CFBundleIdentifier"] as? String {
-            appInfo["AppInfo_BundleId"] = bundleId
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.bundleId] = bundleId
         }
         
         if let executableName = info["CFBundleExecutable"] as? String {
-            appInfo["AppInfo_ExecutableName"] = executableName
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.executableName] = executableName
         }
         
         if let displayName = info["CFBundleName"] as? String {
-            appInfo["AppInfo_DisplayName"] = displayName
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.displayName] = displayName
         }
         
         if let appVersion = info["CFBundleShortVersionString"] as? String {
-            appInfo["AppInfo_Version"] = appVersion
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.appVersion] = appVersion
         }
         
         if let buildNumber = info["CFBundleVersion"] as? String {
-            appInfo["AppInfo_BuildNumber"] = buildNumber
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.buildNumber] = buildNumber
         }
         
         if let minimumOSVersion = info["MinimumOSVersion"] as? String {
-            appInfo["AppInfo_MinimumOSVersion"] = minimumOSVersion
+            appInfo[AnalyticsEvent.MetadataKey.ApplicationInfo.minimumOSVersion] = minimumOSVersion
         }
         
         return appInfo
