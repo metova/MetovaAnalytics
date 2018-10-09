@@ -33,7 +33,7 @@ This implementation would keep the information Metova Analytics collects for you
 
 ```swift
 override metadata: [String: Any] {
-    return ["username":username]
+    return ["username": username]
 }
 ```
 
