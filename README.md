@@ -1,8 +1,6 @@
-<div style="text-align:center">
-    <a href="https://cocoapods.org/pods/MetovaAnalytics">
-        <img src="./Assets/banner.png?raw=true" width=500 alt="Metova Analytics">
-    </a>
-</div>
+<a href="https://cocoapods.org/pods/MetovaAnalytics">
+    <img align="center" src="./Assets/banner.png?raw=true" width=500 alt="Metova Analytics">
+</a>
 
 <p align="center">
  <a href="https://travis-ci.org/metova/MetovaAnalytics" target="_blank"><img src="https://travis-ci.org/metova/MetovaAnalytics.svg?branch=master" alt="Build Status"></a>
