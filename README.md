@@ -1,6 +1,4 @@
-<a href="https://cocoapods.org/pods/MetovaAnalytics">
-    <img align="center" src="./Assets/banner.png?raw=true" width=500 alt="Metova Analytics">
-</a>
+[![Metova Analytics](./Assets/banner.png?raw=true)](https://cocoapods.org/pods/MetovaAnalytics)
 
 <p align="center">
  <a href="https://travis-ci.org/metova/MetovaAnalytics" target="_blank"><img src="https://travis-ci.org/metova/MetovaAnalytics.svg?branch=master" alt="Build Status"></a>
