@@ -1,4 +1,4 @@
-# [Metova Analytics](https://cocoapods.org/pods/MetovaAnalytics)
+[![Metova Analytics](./Assets/banner.png?raw=true)](https://cocoapods.org/pods/MetovaAnalytics)
 
 <p align="center">
  <a href="https://travis-ci.org/metova/MetovaAnalytics" target="_blank"><img src="https://travis-ci.org/metova/MetovaAnalytics.svg?branch=master" alt="Build Status"></a>
@@ -90,6 +90,8 @@ MetovaAnalytics is owned and maintained by [Metova Inc.](https://metova.com)
 If you would like to contribute to MetovaAnalytics, see our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
 
 This library was inspired by [Soroush Khanlou's nice article](http://khanlou.com/2017/12/misusing-subclassing/) about building an inheritance-based analytics system in Swift.  He included many fine suggestions, and we believe he is right.
+
+The Metova Analytics banner image was created by Lorenzo Garnett.
 
 # License
 
