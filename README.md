@@ -1,4 +1,4 @@
-# [Metova Analytics](https://cocoapods.org/pods/MetovaAnalytics)
+[![Metova Analytics](./Assets/banner.png?raw=true)](https://cocoapods.org/pods/MetovaAnalytics)
 
  <a href="https://travis-ci.org/metova/MetovaAnalytics" target="_blank"><img src="https://travis-ci.org/metova/MetovaAnalytics.svg?branch=master" alt="Build Status"></a>
  <a href="https://cocoapods.org/pods/MetovaAnalytics" target="_blank"><img src="https://img.shields.io/cocoapods/v/MetovaAnalytics.svg" alt="CocoaPods Compatible"/></a>
@@ -6,7 +6,7 @@
  <a href="http://cocoadocs.org/docsets/MetovaAnalytics" target="_blank"><img src="https://img.shields.io/cocoapods/p/MetovaAnalytics.svg?style=flat" alt="Platform"/></a>
  <a href="http://twitter.com/metova" target="_blank"><img src="https://img.shields.io/badge/twitter-@Metova-3CAC84.svg" alt="Twitter"/></a>
 
-MetovaAnalytics is a universal analytics framework for handling analytics events with any number of analytics providers.
+Metova Analytics is a universal analytics framework for handling analytics events with any number of analytics providers.
 
 - [Requirements](#requirements)
 - [Communication](#communication)
@@ -38,7 +38,7 @@ MetovaAnalytics is a universal analytics framework for handling analytics events
 $ gem install cocoapods
 ```
 
-To integrate MetovaAnalytics into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate Metova Analytics into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -46,7 +46,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'YourTarget' do
-    pod 'MetovaAnalytics'
+  pod 'MetovaAnalytics'
 end
 ```
 
@@ -56,7 +56,7 @@ Then, run the following command:
 $ pod install
 ```
 
-If you would like to test a beta version of MetovaAnalytics, you can install the latest from develop:
+If you would like to test a beta version of Metova Analytics, you can install the latest from develop:
 
 ```ruby
 pod 'MetovaAnalytics', :git => 'https://github.com/metova/MetovaAnalytics.git', :branch => 'develop'
@@ -80,14 +80,16 @@ For further information, please see [the documentation](./Documentation).
 
 # Credits
 
-MetovaAnalytics is owned and maintained by [Metova Inc.](https://metova.com)
+Metova Analytics is owned and maintained by [Metova Inc.](https://metova.com)
 
 [Contributors](https://github.com/Metova/MetovaAnalytics/graphs/contributors)
 
-If you would like to contribute to MetovaAnalytics, see our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
+If you would like to contribute to Metova Analytics, see our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
 
 This library was inspired by [Soroush Khanlou's nice article](http://khanlou.com/2017/12/misusing-subclassing/) about building an inheritance-based analytics system in Swift.  He included many fine suggestions, and we believe he is right.
 
+The Metova Analytics banner image was created by Lorenzo Garnett.
+
 # License
 
-MetovaAnalytics is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+Metova Analytics is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
