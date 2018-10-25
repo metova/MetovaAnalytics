@@ -34,14 +34,14 @@ extension AnalyticsEvent.MetadataKey {
     public struct DeviceState {
         private init() {}
         
-        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).ds"
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix)_ds"
         
         /// The orientation the current device is rotated to
-        public static let orientation = "\(prefix).orientation"
+        public static let orientation = "\(prefix)_orientation"
         /// The current state of the battery
-        public static let batteryState = "\(prefix).batteryState"
+        public static let batteryState = "\(prefix)_batteryState"
         /// The current charge level of the battery
-        public static let batteryLevel = "\(prefix).batteryLevel"
+        public static let batteryLevel = "\(prefix)_batteryLevel"
     }
 }
 
