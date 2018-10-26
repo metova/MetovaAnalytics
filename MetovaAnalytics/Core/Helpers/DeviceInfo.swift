@@ -34,16 +34,16 @@ extension AnalyticsEvent.MetadataKey {
     public struct DeviceInfo {
         private init() {}
         
-        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).di"
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix)_di"
         
         /// The idiomatic model name of the device
-        public static let deviceModel = "\(prefix).deviceModel"
+        public static let deviceModel = "\(prefix)_deviceModel"
         /// The public, common name of the device
-        public static let deviceName = "\(prefix).deviceName"
+        public static let deviceName = "\(prefix)_deviceName"
         /// The name of the operating system installed on the device
-        public static let osName = "\(prefix).OSName"
+        public static let osName = "\(prefix)_OSName"
         /// The version of the operating system installed on the device
-        public static let osVersion = "\(prefix).OSVersion"
+        public static let osVersion = "\(prefix)_OSVersion"
     }
 }
 

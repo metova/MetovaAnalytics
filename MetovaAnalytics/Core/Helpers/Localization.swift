@@ -34,16 +34,16 @@ extension AnalyticsEvent.MetadataKey {
     public struct PreferredLocalization {
         private init() {}
         
-        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).pl"
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix)_pl"
         
         /// The country code of the user's preferred localization
-        public static let countryCode = "\(prefix).countryCode"
+        public static let countryCode = "\(prefix)_countryCode"
         /// The language code of the user's preferred localization
-        public static let languageCode = "\(prefix).languageCode"
+        public static let languageCode = "\(prefix)_languageCode"
         /// The canonical language id of the user's preferred localization
-        public static let canonicalLanguageId = "\(prefix).canonicalLangId"
+        public static let canonicalLanguageId = "\(prefix)_canonicalLangId"
         /// The display name of the user's preferred localization
-        public static let languageDisplayName = "\(prefix).langDisplayName"
+        public static let languageDisplayName = "\(prefix)_langDisplayName"
     }
 }
 

@@ -34,20 +34,20 @@ extension AnalyticsEvent.MetadataKey {
     public struct ApplicationInfo {
         private init() {}
         
-        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix).ai"
+        private static let prefix = "\(AnalyticsEvent.MetadataKey.prefix)_ai"
         
         /// The bundle id of the application, equivalent to the Info.plist value for key `CFBundleIdentifier`
-        public static let bundleId = "\(prefix).bundleId"
+        public static let bundleId = "\(prefix)_bundleId"
         /// The executable name of the application, equivalent to the Info.plist value for key `CFBundleExecutable`
-        public static let executableName = "\(prefix).exeName"
+        public static let executableName = "\(prefix)_exeName"
         /// The display name of the application, equivalent to the Info.plist value for the key `CFBundleName`
-        public static let displayName = "\(prefix).displayName"
+        public static let displayName = "\(prefix)_displayName"
         /// The public version number of the application, equivalent to the Info.plist value for the key `CFBundleShortVersionString`
-        public static let appVersion = "\(prefix).appVersion"
+        public static let appVersion = "\(prefix)_appVersion"
         /// The internal build number of the application, equivalent to the Info.plist value for the key `CFBundleVersion`
-        public static let buildNumber = "\(prefix).buildNumber"
+        public static let buildNumber = "\(prefix)_buildNumber"
         /// The minimum supported version of iOS for the application, equivalent to the Info.plist value for the key `MinimumOSVersion`
-        public static let minimumOSVersion = "\(prefix).minOS"
+        public static let minimumOSVersion = "\(prefix)_minOS"
     }
 }
 
